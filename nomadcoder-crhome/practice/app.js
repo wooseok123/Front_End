@@ -96,9 +96,87 @@ mouseleave -> 마우스가 해당 영역 -> 밖으로 나갈 때
 html, css, js가 하는 일은 각각이 할 수 있도록..
 js에서도 css를 건드릴 수 있지만
 이는 style 속성 자체를 가지고 있는 css에서 하는게 맞지!
+
+
+window가 가장 상위의 object임
+
+-----------------------------------------------------
+
+title.onclick = handleTitleClick 
+
+=== title.eventListener("click",handleTitleClick);
+
+둘 다 같은 기능을 하지만, 후자를 선호함
+
+왜냐하면, .removeEventListener 를 통해 없앨 수 있기 때문
+
+resize event -> 화면 크기가 바뀔 때 씀
+
+document 는 htmlelement만 가져오므로 div, class 등을 검색할 수는 없음
+ex) document.div... etc
+
+
+
  */
 
+/*
+const title = document.querySelector("#title");
 
 
+
+function handleTitleColor () {
+    const currentColor = title.style.color;
+    console.log(currentColor);
+    let newColor;
+    if (currentColor == "red") {
+        newColor = "blue";
+    } else {
+        newColor = "red";
+    }
+    title.style.color = newColor;
+};
+
+변수를 DOM 요소로 설정한 후, 직접적으로 값을 재할당하느냐, 간접적으로 하느냐에 따라
+상황이 다르게 흘러가는 듯 
+그리고 const 라고 해도 직접적으로 바꾸는게 아니면, 에러가 안나는 듯
+
+직접적으로 값을 바꾸고 싶을 때는 DOM 자체를 이용하자
+DOM 요소를 변수에 담으면 변수는 그릇일 뿐이지, 바로 내용물을 함부로 바꿀 순 없다.
+
+
+title.addEventListener("click",handleTitleColor);
+
+*/
+
+/*
+
+const h1 = document.querySelector(".title");
+
+function handleTitleClick () {
+    h1.classList.toggle("clicked");
+};
+
+
+
+// css에서 색깔 변경이 이루어지는 것이 맞기 때문에
+// classname을 추가시키는 것으로 css를 적용시킴
+
+// 또한 string으로 바로 값을 대조하기 보다는
+// 변수에 집어 넣어 error 가능성을 최소화시키자 
+
+// classname 자체를 바꿔버리면, 해당 클래스가 몇 개의 클래스를 가지던
+// 1개의 클래스로 바꿔버림 ( 즉 폰트, 글씨체 등등 다른 클래스가 없어짐)
+// -> classlist로 추가, 삭제 기능을 사용
+// -> 원래 가지던 class는 그대로 계승
+
+
+// 여러 속성에 대한 이해가 필요
+// ex) classlist에 목표값이 contains 되어있으면 .remove(class)
+// 있으면 add를 한다고 하려면 5~6줄의 코드가 필요하지만,
+// toggle이라는 속성을 통해 쉽게 해결 가능
+
+h1.addEventListener("click",handleTitleClick);
+
+*/
 
  
