@@ -179,4 +179,46 @@ h1.addEventListener("click",handleTitleClick);
 
 */
 
+// function onLoginClcik() {
+//     const userName = loginInput.value;
+//     if (userName === "") {
+//         alert("You wrote nothing.");
+//     } else if (userName.length > 15) {
+//         alert("Your name is too long.");
+//     }
+// };
+
+// 항상 user가 주는 값을 경계하고 타당한지 체크하는 습관!
+// 위에 코드도 좋지만, 브라우저 자체가 해결하게 하는 것도 좋음
+// ex) html에서 required + maxlength 를 줘버리면 브라우저가
+// 알아서 문제를 줌
+
+
+/* 
+<form id="login-form">
+<input
+required
+maxlength="15"
+type="text"
+placeholder="what is your name?"
+/>
+<button>Log In</button>
+</form> 
+
+form 요소를 사용하지 않으면, required 속성을 통한 메시지 도출 x
+그러므로 꼭 form 요소를 사용하자
+*/
  
+{/* <form id="login-form">
+<input
+required
+maxlength="15"
+type="text"
+placeholder="what is your name?"
+/>
+<button>Log In</button>
+</form>
+<!-- 여기서 문제점이 생기는데, form 요소에서 input+button이 있거나
+input 속성에 submit이 있으면 form이 제출되고 웹페이지가 refresh됨 --> */}
+// 그리고 굳이 button이 없어도 더 이상 input이 없다면 enter만 눌러도 submit됨
+// 즉 click이랑 상관 없이 submit 될 때 우리가 값을 저장하고 픈 것임.
