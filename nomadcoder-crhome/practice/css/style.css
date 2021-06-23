@@ -1,3 +1,14 @@
+@import "reset.css"; 
+/* reset css를 작성하고 싶을 때는 직접 호출보다는
+   사용하고자 하는 css 맨 위에 호출해서 사용
+ */
+
 .hidden {
     display: none;
+}
+
+img {
+    z-index: -1;
+    /* 어케하노 이미지 뒤로 옮기는거.. */
+    width: 100%;
 }
