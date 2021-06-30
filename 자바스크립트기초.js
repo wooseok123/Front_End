@@ -282,3 +282,111 @@ let boy = {
   }
 
   // push -> 요소 뒤에 넣음 unshit -> 앞에 넣음 ..아니면 그냥 인덱싱
+
+//   let과 const는 tdz(temporal dead zone)라고 해서
+//   호이스팅의 영향을 받지 x, 즉 선언되기 전에 부르면 오류
+
+//   하지만 호이스팅은 scope 내부에서 일어남
+
+//   그러므로
+
+//   let age = 30;
+
+//   function showAge() {
+//       console.log(age);
+
+//       let age = 20;
+//   }
+
+//   showAge();
+
+//   => age = 20으로 나옴
+------------------------------------------------------------------------------------
+1. var 
+ 선언 및 초기화가 동시에 일어남 => 값을 할당하지 않아도 undefined
+
+ 2. let
+  선언 단계와 초기화가 분리 => 초기화는 실제 코드에 도달해야지만 하므로 ReferenceError 발생
+
+3. const
+   선언 초기화 할당이 전부 동시에 => 선언만 할 수가 없다
+
+
+let, const => 블록 스코프(block-scoped)
+ => 함수, if, for, while, try, cathch 등의 블록문에서 생성된 변수는 
+ 외부 접근 불가 => 즉 지역변수
+
+ var => 함수 스코프 => 함수 내에서만 선언된 변수가 지역변수, 그 외는 모두 전역변수
+------------------------------------------------------------------------------------
+  객체 리터럴 => object 형식
+
+  그러나 양이 많다면 => 생성자 함수
+
+  ex) function User/*보통 생성자 함수는 앞글자가 대문자*/(name,age) {
+      // this = {} object 생성
+      this.name = name;
+      this.age = age;
+      this.sayName = function(){
+          console.log(this.name);
+      }
+      // return this (this 반환) => 두 줄은 생략 => object 계속 일관적으로 만들 수 있다
+  }
+
+  let user1 = new User('Mike', 30); // new 연산자를 활용하여 함수 호출
+  let user2 = new User('Jane', 30);
+  let user3 = new User('Tom', 30);
+
+  -----------------------------------------------------------------------------------
+
+  computed property (계산된 프로퍼티)
+
+  ex)
+
+  let a = 'age';
+
+  const user = {
+      name : "mike",
+      [a] : 30 //  age = 30 (변수 a에 할당된 값이 들어감)
+  }
+
+const user = {
+    [1+4] : 5,
+    ["안녕"+"하세요"] : 'Hello'
+}
+
+object.assgin() : 객체 복제
+
+const user = {
+    name : "mike",
+    age : 30
+}
+
+const cloneUser = user;
+
+=> 이러면 cloneUser는 앞의 user와 같은 메모리 값을 참조하게 됨 (즉 복사가 아님!!)
+
+그러므로 복제하고 싶으면 const cloneUser = object.assgin({}/*초기값*/,user);
+ => {} + {name : 'mike', age : 30} = 빈 객체 안에 객체가 들어가므로
+   {
+       name : 'mike',
+       age : 30,
+   }
+
+object.assgin({gender = 'female'}, user); => gender가 default key 값으로 들어감
+만약 키가 같다면? ex) name = 'Tom' => user가 덮어 씀
+object.assgin({},info1,info2,---) => 다양한 값 할당 가능
+
+object.entries() : 키/값 배열로 변환
+ex) 
+const user = {
+    name : 'mike',
+    age : 30,
+    gender : 'male',
+}
+object.entries(user); => 
+[
+    ["name","mike"],
+    [blahblah..],
+]
+---------------------------------------------------------------
+object.fromEntries() : => 키,값 배열을 객체로 돌려줌
