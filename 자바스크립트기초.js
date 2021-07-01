@@ -390,3 +390,272 @@ object.entries(user); =>
 ]
 ---------------------------------------------------------------
 object.fromEntries() : => 키,값 배열을 객체로 돌려줌
+
+------------------------------------
+
+object의 key값은 property 값이 가능
+ex)
+
+const hihi  = {
+    1 : false,
+    true : "hi"
+}
+
+object.keys(obj); => // ["1","true"]
+
+인덱싱할 때도 "" 붙여서 인덱싱 // hihi["1"]
+
+symbol 형태도 가능
+const a = symbol(); 
+const b = symblo();
+// 유일한 식별자
+
+console.log(a) // symbol()
+console.log(b) // symbol()
+// a === b => false (둘이 다름)
+
+const id = symbol('id'); // 설명 id
+
+const id = symbol('id');
+const id2 = symbol('id');
+
+// 둘이 다름
+
+const id = symbol(id);
+
+const user = {
+    name : 'mike',
+    age : 30,
+    [id] : 'myid',
+}
+
+user // {name : 'mike', age:30 , Symbol(id) : "myid"}
+
+// 신기한게 key가 symbol 형인 것은 .keys, .values, entries 다 건너뜀
+
+for (let a in user) => 이것도 건너뜀 
+
+// 이게 왜 쓸모가 있냐??
+
+// 원본 데이터를 건드리지 않고 데이터값을 넣을 ㅜ수 있음
+// 남이 만든 key 값을 변경해버릴 수도 있기 때문임. 
+
+Symbol.for() : // 전역 심볼
+// for 문 뒤에 key 값을 입력하여 같은 symbol을 공유할 수 있음
+
+const id1 = symbol.for('id');
+const id2 = symbol.for('id')
+console.log(id1===id2) ===> true
+
+반대로 변수명을 알고 싶다면 keyfor
+
+ex) console.log(Symbol.keyfor('id1')) // id
+
+// 하지만 전역심볼이 아닌 경우에는 key 값을 keyfor로 볼 수 없음
+// 이때는 .description 속성을 활용해 볼 수 있음
+
+// 숨겨진 symbol key 보는 법
+
+=> object.getOwnPropertySymbols(user); // [Symbol(id)]
+or   Reflect.ownKeys(user); // ["name","age",symbol(id)]
+
+// 그러나 이렇게까지 구차하게는 안하니깐
+// 원본 데이터를 건드리지 않고 추가하는 방법이 있다를 기억해라
+------------------------------------------------------
+
+toString() => 10진수를 2진수/16진수로 바꿈
+
+let num = 10;
+
+num.toString(); //"10"
+num.toString(2); //"1010"
+
+let num2 = 255;
+num2.toString(16); // "ff"
+
+Math // 내장객체
+
+Math.PI
+Math.ceil() // 올림
+Math.floor // 내림
+Math.round // 반올림
+
+근데 소수점에서 올려달라고 할 수도 있다
+
+let userRate = 30.1234,
+
+=> Math.round(userRate * 100) / 100 => 30.12
+아니면 userRate.toFixed(2) // 3번째부터 반올림, 즉 2번째 소수까지 고정
+하지만 결과값이 const 이므로 number(userRate.toFixed(2));
+이렇게 숫자값으로 만듦
+
+-----------------------------------------------------
+
+let x = number('x') //NaN 
+
+그렇다고 해서 if (x == NaN) // 오류임
+// 왜냐하면 isNaN(x) 만이 NaN 값을 체크할 수 있기 때문임
+
+parseInt // 문자열을 숫자로 바꿔줌
+number와 다른 점은 안에 문자열이 있어도 동작함
+let margin = '19px';
+ex) parseInt(margin); // 19
+     Number(Margin); // NaN
+
+// 근데 parseInt 는 읽을 수 있는 곳 까지 읽고 문자를 만나면 숫자를 반환함
+//ㄱ 그러므로 f3 처럼 숫자로 시작하지 않으면 NaN 반환
+
+// 두 번째 인수를 받아 x진수로 표현 가능
+
+ex) let redColor = 'f3';
+   parseInt (redColor,16); //243
+
+parseFloat // 소수점까지 반환 parseInt 는 정수만 반환
+     
+Math.random() // 0~1사이의 숫자 반환
+
+// 1~100 사이의 임의 숫자 반환??
+
+Math.floor(Math.random()*100)+1 //+1은 0이 나올 수도 있기 때문
+//floor를 해줘야 함! 
+Math.pow // 인자를 2개 받음 인수와 승
+Math.sqrt() // 제곱근
+
+--------------------------------------------------------------
+// 문자열 메소드
+
+let html = '<div class="box_title>제목 영역</div'
+// DOM과 관련해서는 문자열을 만들 때 ''로 해야 편함
+
+let desc = "It's 3 o'clock."
+// 영어 문장은 ""로 해야 편함
+
+// ``은 여러줄 표현 가능 ex)
+
+let desc = `오늘은 맑고 화창한
+날씨가 계속 되겠습니다.
+내일은 비소식이 있습니다.`
+
+// 문자열로 한다면 \n 
+
+let desc = '오늘은 맑고 화창한\n날씨가 계속 되겠습니다.'
+
+// 문자열은 불변, 교체는 가능해도 내용 수정은 불가능함
+
+ex) let desc = '안녕하세요.'
+
+desc[3] = '용';
+// consol.log(desc) => '안녕하세요.'
+
+let desc = "Hi guys. Nice to meet you."
+
+desc.toUpperCase() // 값을 바꾸는게 아님
+desc.toLowerCase() // 각각 대문자 소문자
+
+
+desc.indexOf(text) // 찾고자하는 text의 인덱스를 반환
+
+desc.indexOf("to"); // 14
+
+desc.indexOf('Man'); // -1 찾고자하는게 없다면 -1을 반환
+
+ex)
+
+function hasCola(str) {
+    if (str.indexOf('콜라') > -1) {
+        console.log("금칙어가 있습니다");
+    }
+    console.log('통과');
+}
+
+hasCola("와 사이다가 짱이야!");
+
+// 
+
+function hascola(strrr) {
+    if (strrr.includes("콜라")) {
+        //
+    }
+}
+
+// if문에 집어 넣을 때에는 > -1 이정도로 표현해줘야 함
+
+desc.slice(n,m);
+
+// n은 시작 위치 , m은 없으면 문자열 끝까지 양수면 그 숫자까지(포함x)
+// 음수면 끝에서부터 셈
+
+let desc = "abcdefg";
+desc.slice(1,2) => "b"
+
+desc.slice(2,-2) => "cde"
+
+substring(n,m) // slice와 동일하지만 n,m의 위치를 바꿔도 동작함
+// 즉 n,m 사이라고 생각하면 편함
+// 음수는 0으로 인식
+
+trim() // 앞뒤 모두 공백지움
+
+repeat(num) // 문자열 반복
+
+
+---문자열 비교
+
+"a" < "c" // 아스키 코드를 보면 c가 더 큼
+"c" > "F" // 대문자보다 소문자가 더 큼
+
+해당 아스키값을 보고싶으면
+
+"a".codePointAt(0);
+
+아스키값 => 문자 도출
+
+String.fromCodePoint(97) 
+
+
+-----------------------------------
+
+
+splice(n,m) => 특정 요소를 지움
+//n = 시작점 m = 개수 ()
+ex) let arr = [1,2,3,4,5];
+arr.splice(1,2);
+
+// arr = [1,4,5]
+
+splice(n,m,r1,r2,...) => 특정 요소를 지우고 그 자리에 추가
+
+ex) arr.splice(1,3,100,200)
+
+// arr = [1,100,200,5]
+
+// splice 는 반환된 값임
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
