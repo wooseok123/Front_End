@@ -1,5 +1,6 @@
 const toDoForm = document.querySelector("#todo-form");
-const toDoList = toDoForm.querySelector("ul");
+const toDoList = document.querySelector("ul#todo-list");
+const todoBtn = toDoList.button;
 const toDoinput = toDoForm.querySelector("input")
 const TODO_KEY = "thingsToDo"
 let ToDoArray = []
@@ -35,7 +36,7 @@ function appendToDo (newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
-    span.innerText =newTodo.text;
+    span.innerText =newTodo.text+" ";
     const removeBtn = document.createElement("button")
     removeBtn.innerText = "✖";
     li.appendChild(span); //todo 삭제 기능 추가를 위해 span 추가
@@ -60,11 +61,13 @@ function handleToDoSubmit (event) {  // 왜 add 기능과 handle 기능으로 �
 
 
 function removeToDoList (event) {
-    const li = event.target.parentNode;
-    console.log(li);
-    li.remove();
-    ToDoArray = ToDoArray.filter((toDo) => toDo.id !== parseInt(li.id));
-    saveToDo();
+    if (event.path[0].innerText=="✖") { // btn을 클릭하는게 아니라 list 영역을 만져도 지워지길래, 
+        const li = event.target.parentNode;
+        console.log(li);
+        li.remove();
+        ToDoArray = ToDoArray.filter((toDo) => toDo.id !== parseInt(li.id));
+        saveToDo();
+    }
 }
 
 
