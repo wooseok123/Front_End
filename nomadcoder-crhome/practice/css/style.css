@@ -1,14 +1,56 @@
-@import "reset.css"; 
+/* @import "reset.css"; 
 /* reset css를 작성하고 싶을 때는 직접 호출보다는
    사용하고자 하는 css 맨 위에 호출해서 사용
+ */
  */
 
 .hidden {
     display: none;
 }
 
-img {
-    z-index: -1;
-    /* 어케하노 이미지 뒤로 옮기는거.. */
-    width: 100%;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
+body {
+    font-family: 'LAB디지털';
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+img {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+
+}
+
+#bgimg {
+    background-color: black;
+}
+
+ul{
+    list-style:none;
+    padding-left:0px;
+}
+
+@font-face {
+    font-family: 'LAB디지털';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+
