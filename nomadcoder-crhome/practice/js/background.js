@@ -10,9 +10,10 @@ const images = [
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 
 
+
 const bgImage = document.createElement("img"); 
 //  자바스크립트에서 요소를 만들어 html에 끼워주기
-
+bgImage.className = "overLay"
 bgImage.src = `img/${chosenImage}`;
-
-document.body.appendChild(bgImage);
+const bgDiv = document.querySelector("#bgimg");
+bgDiv.appendChild(bgImage);
