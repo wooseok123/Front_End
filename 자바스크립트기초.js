@@ -631,20 +631,194 @@ ex) arr.splice(1,3,100,200)
 
 // splice 는 반환된 값임
 
+arr.concat(arr2,arr3..) : //합쳐서 새배열 반환
+
+let arr = [1,2];
+
+arr.concoat([3,4];) //[1,2,3,4]
+
+arr.forEach(fn) : //배열 반복
+
+let users = ['mike','tom','jane'];
+users.foreach((item,index,arr)) 
+
+//ex
+
+users.forEach((name,index) => {
+    console.log(`${index}. ${name}`);
+});
 
 
+arr.indexOf / arr.lastIndexOf
 
+let arr = [1,2,3,4,5,1,2,3,];
 
+arr.indexOf(3);
+arr.indexOf(3,3) // 두 번째 인수는 그 이후로 부터
 
+arr.lastIndexOf() // 뒤에서 부터 탐색
 
+arr.includes() : 포함하는지 확인
 
+arr.find(fn) / arr.findIndex(fn) //true값을 반환, 없으면 undefined
+// 조심해야 할 것은 1개만 찾고 끝난다는 거
 
+let arr == [1,2,3,4,5];
 
+const result = arr.find((item) => {
+    return item % 2 === 0;
+});
 
+console.log(result);
 
+let userlist = [
+    {name : "mike", age:30},
+    {name : "Jane", age:27},
+    {name : "Tom", age:10},
+];
 
+const result = userlist.find((user) => {
+    if (user.age < 19) {
+        return true;
+    }
+    return false;
+})
 
+console.log(result);
 
+--
+
+const result = userlist.findindex((user) => {
+    if (user.age < 19) {
+        return true;
+    }
+    return false;
+})
+
+console.log(result);
+// 그럼 만족하는 모든 요소를 반환하고 싶으면??
+
+arr.filter(fn);
+
+const = arr [ 1,2,3,4,5];
+
+const result = arr.filter((name) => {
+    if // 위와 동일
+})
+
+arr.reverse() // 역순으로 재정렬
+
+arr.map(fn) // 함수를 받아 특정 기능 시행, 새로운 배열 반환
+
+let userList = [
+    {name: "Mike", age : 30},
+    {name: "Jane", age : 27},
+    {name : "Tom", age : 10},
+];
+
+let newUserList = userList.map((user,index) => {
+    return Object.assign({}, user, {
+        id : index + 1,
+        isAdult: user.age > 19,
+    });
+});
+
+console.log(newUserList);
+
+//map은 실무에서 자주 사용됨!
+
+let arr = ["안녕","나는","철수야"];
+
+let result = arr.join();
+=> // 배열을 () 안에 있는 걸 추가해서 합침
+
+const users = "Mike,Jane,Tom,Tony";
+
+let result = str.split(""); // 문자 하나하나 마다 자름
+                       "," // ,기준으로 자름
+Array.isArray() // array 인지 확인
+
+ex)
+
+let  user = {
+    name : "Mike",
+    age : 30,
+}
+
+let userlist = ["Mike","Tom","Jane"];
+
+console.log(typeof user);
+console.log(typeof userlist); // 값이 둘 다 같음 (object)
+
+console.log(Array.isArray(user)) // array 여부 확인 가능
+
+------------------------
+
+arr.sort(); //배열 재정렬, 배열 자체가 바뀜
+
+// 안에 있는 배열을 문자열로 받기 때문에 문제가 발생
+
+ex) 
+
+arr = [13,27,5,8];
+arr.sort(); // [13,27,5,8]
+
+//인수로 정렬 로직을 담은 함수를 받는다
+
+function fn(a,b) {
+    return a-b;
+}// 두 요소를 전달해서 양,0,음수인지 알려주면 됨
+// a가 음수이면 앞으로 가고, 같으면 가만히, a가 양수이면 뒤로 감
+arr.sort(fn);
+
+//귀찮고 힘들기 때문에 Lodash라는 라이브러리를 통해 보통 함
+
+ex) arr.sortBy(arr); (숫자든 문자든 객체든 원하는 기준에 따라 정렬)
+나중에 한 번 봐보자
+
+let total = 0
+arr.foreach((num) => {
+    total+=num;
+})
+
+//reduce를 사용해서도 가능
+
+let arr =[1,2,3,4,5]
+
+const result = arr.reduce((prev,cur) => {
+    prev += cur;
+}, 0)
+
+// prev는 누적계산값, cur은 현재값(=arr인덱싱한 값)
+// 뒤의 0은 prev의 초기값 (0이 default임)
+
+let userList = [
+    {name: "Mike", age : 30},
+    {name: "Jane", age : 27},
+    {name : "Tom", age : 10},
+];
+
+let result = userList.reduce((prev,cur) => {
+    if(cur.age > 19) {
+        prev.push(cur.name);
+    }
+    return prev;
+}, [])
+
+let result = userList.reduce((total,user) => {
+    return total += user.age;
+}, 0)
+
+let reuslt = userList.reduce((length,user) => {
+    if (user.name.length ===3 ) {
+        length.push(user.name);
+    }
+    return length
+} , [])
+
+// 각각 뭐쓸지는 상황에 맞게...
+
+// reduceRight() => 배열 우측부터 함
 
 
 
