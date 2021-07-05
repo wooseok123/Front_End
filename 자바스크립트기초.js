@@ -820,16 +820,189 @@ let reuslt = userList.reduce((length,user) => {
 
 // reduceRight() => 배열 우측부터 함
 
+----------------------------------------
+
+//배열 구조 분해
+
+
+let user = ['MIke', 'Tom', 'Jane'];
+
+let [user1, user2, user3] = user;
+
+// split도 배열 구조 분해가 가능함
+
+let [a,b,c] = [1,2];
+
+c = undefined
+
+// default 값을 주는 경우도
+
+let [a=3, b=4, c=5] = [1,2]; 
+// a=1, b=2, c=5;
+
+// 일부 반환값 무시
+
+let [a,,c] = [1,2,3,4];
+// a=1 c=3
+
+let a = 1;
+let b = 2;
+[a,b] = [b,a] ; //바꿔치기
+
+//객체 구조 분해
+
+let user = {name:'Mike', age:30};
+let {name, age} = user;
+//순서를 신경쓰지 않아도 됨
+
+// user의 key값만을 사용하지 않아도 됨
+
+let {name:userName, age:userAge} = user;
+
+let {name, age, gender} = user
+//gender는 undefined 이므로 gender = ""
+// default 값을 줌
+
+// 나머지 매개변수 ...
 
 
 
+// arguments
+function showName(name) {
+    console.log(arguments.length);
+    console.log(arguments[0]);
+    console.log(arguments[1]);
+}
+showName('Mike');
+showName('Mike','Tom'); 
+// 꼭 인자를 한 개만 주지 않아도 됨. 
+
+//인자란?
+//함수로 넘어 온 모든 인수에 접근
+//함수 내에서 사용 가능한 지역 변수
+//length, index
+//array 형태의 객체 (array 아님)
+//배열의 내장 메서드가 없다
+
+// 나머지 매개 변수
+
+function showName(...names) {
+    console.log(names);
+}
+
+showName(); // [] 인자(arguments)를 쓸 경우엔 undefined 반환하는뎅 ㅋ
+showName('Mike','Tom'); // ['MIke','Tom']
 
 
+ex)
+
+let result = 0;
+
+function add(...num) {
+    num.forEach((number) => {
+          result += number;
+    })
+};
+
+add(1,2,3,4,5,6,7,8,9,10);
+console.log(result);
+
+function add(...num) {
+    let result = num.reduce((prev,cur) => {
+        prev += cur;
+    })
+};
+
+--------------------------------------------------
+
+function User(name, age, ...skill) {
+    this.name = name;
+    this.age = age;
+    this.skills = skills;
+}
+
+const user1 = new User('Mike',30,'html','css')
+const user2 = new User('Tom', 20, "JS", "React")
+const user3 = new User('Tom', 10, 'English');
+
+// 매개변수는 마지막에 위치해야 하며 뒤에 뭐가 와서도 안됨
+
+let arr1 = [1,2,3];
+let arr2 = [4,5,6];
+
+//전개 구문 : 배열
+let result = [0, ...arr1, ...arr2, 7,8,9];
+
+// 전개 구문 : 객체
+let user = {name:'Mike'};
+let mike = {...user,age:30};
+
+let arr = [1,2,3];
+let arr2 = [...arr];
+// 전개 구문 : 복제
+let user = {name:'Mike',age:30};
+let user2 = {...user};
+
+user2.name = "Tom";
+
+// 실용예제 arr1 -> [4,5,6,1,2,3] 으로 만들어라
+let arr1 = [1,2,3];
+let arr2 = [4,5,6];
+
+arr1 = [...arr2,...arr1];
+
+console.log(arr1);
+
+// 이렇게 하면 안됨  -> [6,5,4,1,2,3]
+arr2.forEach((num) => {
+    arr1.unshift(num);
+})
+
+//굳이 할꺼면...
+
+arr2.reverse().forEach((num) => {
+    //
+})
 
 
+let arr1 = [1,2,3];
+let arr2 = [4,5,6];
+
+arr1 = arr2+arr1;
+console.log(typeof arr1);
+
+// 단순히 배열을 합치는 것은 str이 됨
 
 
+let user = {name: 'mike'};
+let info = {age : 30};
+let fe = {"js", "React"};
+let lang = {'Korean','English'};
 
+user = Object.assign({},user,info,fe,lang);
+---------------------------------------------------
+let user = {name: 'mike'};
+let info = {age : 30};
+let fe = ["js", "React"];
+let lang = ['Korean','English'];
+let skills = []
+const UserInfo = Object.assign({}, user, info, {
+        skills : [...fe,...lang]
+    });
+console.log(UserInfo);
 
-
-
+=>
+let user = {name: 'mike'};
+let info = {age : 30};
+let fe = ["js", "React"];
+let lang = ['Korean','English'];
+let skills = []
+const UserInfo = {
+    ...user,
+    ...info,
+    skills : [
+        ...fe,
+        ...lang
+    ]
+};
+console.log(UserInfo);
