@@ -1,8 +1,8 @@
 const canvas = document.querySelector(".myCanvas");
 const ctx = canvas.getContext("2d");
-const figureArr = ["Circle","Square","Triangle"];
-ctx.fillStyle = "red";
-ctx.strokeStyle = "yellow";
+let randomFigure = undefined;
+ctx.fillStyle = "blue";
+ctx.strokeStyle = "black";
 ctx.lineWidth = 10;
 const canvas_width = canvas.width;
 const canvas_height = canvas.height;
@@ -12,31 +12,27 @@ const square_length = 100;
 let x = 500;
 let y = 400;
 
-let dx = 1;
-let dy = 1;
 
-let change = false;
 
-// function makeRandomFigure () {
-//     const randomNum = Math.round(Math.random() * figureArr.length);
-//     console.log(randomNum);
-//     return randomNum;
-// }
+let dx = makeRandom();
+let dy = makeRandom();
 
-// function randomFigure (num) {
-//     const randomFigure = num;
-//     if (randomFigure == "Triangle") {
-//         setInterval(triangleBounce,1);
-//     }
-//     else if (randomFigure == "Square") {
-//         setInterval(squareBounce,1);
-//     }
-//     else {
-//         console.log("이거지?")
-//         setInterval(circleBounce,1);
-        
-//     }
-// }
+function makeRandom () {
+    let num = Math.round(Math.random()*10);
+    return num;
+}
+
+function chooseRandom () {
+    if (randomFigure == "Square") {
+        squareBounce();
+    }
+    else{
+        circleBounce();
+    }
+}
+
+// 함수 내에서 전역변수 바꿀 수 있음!!
+
 
 function circleBounce() {
     ctx.clearRect(0,0,canvas_width,canvas_height);
@@ -46,54 +42,42 @@ function circleBounce() {
     ctx.fill();
     if (x < arc_radius || x > canvas_width-arc_radius) {
         dx = -dx;
+        randomFigure = "Square"
+
     }
     if (y < arc_radius || y > canvas_height-arc_radius) {
         dy = -dy;
-
+        randomFigure = "Square"
     }
+
     x += dx;
     y += dy;
 
 };
 
-// function squareBounce() {
-//     ctx.clearRect(0,0,canvas_width,canvas_height);
-//     ctx.fillRect(x,y,square_length,square_length)
-//     if (x < square_length || x > canvas_width-square_length) {
-//         dx = -dx;
-//         randomFigure;
-//     }
-//     if (y < square_length || y > canvas_height-square_length) {
-//         dy = -dy;
-//         randomFigure;
+function squareBounce() {
+    ctx.clearRect(0,0,canvas_width,canvas_height);
+    ctx.fillRect(x-50,y-50,square_length,square_length)
+    // 원은 중심을 기준으로 radius를 판단하는데 반해,
+    // 원은 그냥 무대뽀로 변의 길이만 찾으므로
+    // 사각형의 반 정도를 미리 더하고 빼서 캔버스 사이즈에 맞게 변화
+    if (x+50 < square_length || x-50 > canvas_width-square_length) {
+        dx = -dx;
+        randomFigure = "Circle"
+    }
+    if (y+50 < square_length || y-50 > canvas_height-square_length) {
+        dy = -dy;
+        randomFigure = "Circle"
+    }
+    x += dx;
+    y += dy;
+    console.log(y);
 
-//     }
-//     x += dx;
-//     y += dy;
+};
 
-// };
 
-// function triangleBounce() {
-//     ctx.clearRect(0,0,canvas_width,canvas_height);
-//     ctx.beginPath();
-//     ctx.arc(x,y,arc_radius,0,Math.PI*2);
-//     ctx.closePath();
-//     ctx.fill();
-//     if (x < arc_radius || x > canvas_width-arc_radius) {
-//         dx = -dx;
-//         randomFigure;
-//     }
-//     if (y < arc_radius || y > canvas_height-arc_radius) {
-//         dy = -dy;
-//         randomFigure;
+setInterval(chooseRandom,10);
 
-//     }
-//     x += dx;
-//     y += dy;
-
-// };
-
-setInterval(circleBounce,1);
 
 
 
