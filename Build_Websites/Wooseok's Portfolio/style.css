@@ -1,0 +1,25 @@
+body {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+header {
+    width: 100%;
+    height: 100%;
+}
+
+header #logo {
+    position: absolute;
+    margin-bottom: 90%;
+}
+
+header #bgimg {
+    width: 100%;
+    background-repeat: repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
