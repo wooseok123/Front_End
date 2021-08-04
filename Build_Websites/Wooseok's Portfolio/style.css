@@ -36,4 +36,33 @@
         /* padding이든 border을 주던 content 값에 맞춰서 안쪽으로 표현되도록 */
 }
 
+/* Typography */
+
+h1 {
+    font-size : var(--font-large);
+    font-weight: var(--weight-bold);
+    color: var(--color-black);
+    margin: 16px 0;
+}
+
+h2 {
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+    color:var(--color-black);
+    margin: 8px 0;
+}
+
+h3 {
+    font-size : var(--font-regular);
+    font-weight: var(--font-regular);
+    color: var(--color-black);
+    margin: 8px 0;
+}
+
+p {
+    font-size : var(--font-regular);
+    font-weight: var(--font-regular);
+    color: var(--color-black);
+    margin: 4px 0;
+}
     /* 할 때마다 바꾸는 것이 아니라 전역변수를 지정하여 계속 재사용 */

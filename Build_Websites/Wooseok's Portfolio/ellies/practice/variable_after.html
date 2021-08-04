@@ -10,10 +10,12 @@
         --background-color: thistle;
         --text-color: whitesmoke;
         --base: 8px;
+        /* root로 전역변수 지정 */
       }
       .first-list {
         background-color: var(--background-color);
-        color: var(--text-color, red);
+        color: var(--text-color, red); 
+        /* 두번째 인자는 default값 */
         margin-left: var(--base);
       }
 
@@ -21,6 +23,7 @@
         background-color: var(--background-color);
         color: var(--text-color, red);
         margin-left: calc(var(--base) * 2);
+        /* calc를 통해 점진적으로 배수 추가 가능 */
       }
 
       @media screen and (max-width: 768px) {
@@ -30,6 +33,9 @@
           --base: 4px;
         }
       }
+      /* https://developer.mozilla.org/en-US/docs/Web/CSS/--* */
+      /* 미디어 쿼리 사용시에도 중요함 */
+      /* 반응형 시마다 바뀜! */
 
       /* css에서도 자주 쓰는 것들은 변수 설정 가능 */
       /* 자주 쓰이는 상수 값들을 그냥 다 써버리는 것을 */
