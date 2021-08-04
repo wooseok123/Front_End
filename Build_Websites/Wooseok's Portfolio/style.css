@@ -27,8 +27,11 @@
     --weight-bold : 700;
     --weight-semi-bold : 600;
     --weight-regular : 400; 
-}
+
     /* Size */
+    --size-border-radius : 4px;
+}
+
 
     /* Universal tags */
 * {
@@ -36,6 +39,21 @@
         /* padding이든 border을 주던 content 값에 맞춰서 안쪽으로 표현되도록 */
 }
 
+body {
+    margin : 0;
+    font-family: 'Open Sans', sans-serif;
+    cursor: default;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
 /* Typography */
 
 h1 {
@@ -66,3 +84,46 @@ p {
     margin: 4px 0;
 }
     /* 할 때마다 바꾸는 것이 아니라 전역변수를 지정하여 계속 재사용 */
+/* Navbar */
+
+#navBar {
+    display: flex;
+    justify-content: space-between;
+    /* 수평축에서 서로 간 거리를 둠 */
+    background-color: var(--color-pink);
+    align-items: center;
+    color: var(--color-white);
+    padding: 16px;
+}
+
+.navBar__logo {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+}
+
+.navBar__menu {
+    display: flex;
+    text-align: center;
+}
+
+.navBar__menu__item {
+    padding : 8px 6px;
+    margin: 0px 6px;
+    min-width: 90px;
+    cursor: pointer;
+    border-radius: var(--size-border-radius);
+}
+
+.navBar__menu__item.active {
+    border : 1px solid var(--color-white);
+    
+}
+
+.navBar__menu__item:hover {
+    background-color: var(--color-dark-pink);
+    border-radius: 4px;
+}
+
