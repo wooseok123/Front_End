@@ -19,10 +19,14 @@
 
       .inner1 {
         margin: auto;
+        /* 수평만 적용가능 */
+        /* 수직은 적용 불가 */
       }
 
       .box2 {
         text-align: center;
+        /* 중간 정렬 가능하지만 */
+        /* 블럭 레벨(div같은거)는 적용 안됨 */
       }
 
       .inner3 {
@@ -32,6 +36,8 @@
       .box4 h1 {
         text-align: center;
         line-height: 100px;
+        /* line height는 hacky하지만 쓸 수는 있음 */
+        /* 두 줄이면 간격이 너무 벌어져 문제가 됨 */
       }
     </style>
   </head>
