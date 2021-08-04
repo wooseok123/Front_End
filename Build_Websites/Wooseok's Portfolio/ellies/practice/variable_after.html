@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom properties</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/--* -->
+    <style>
+      :root {
+        --background-color: thistle;
+        --text-color: whitesmoke;
+        --base: 8px;
+      }
+      .first-list {
+        background-color: var(--background-color);
+        color: var(--text-color, red);
+        margin-left: var(--base);
+      }
+
+      .second-list {
+        background-color: var(--background-color);
+        color: var(--text-color, red);
+        margin-left: calc(var(--base) * 2);
+      }
+
+      @media screen and (max-width: 768px) {
+        :root {
+          --background-color: salmon;
+          --text-color: whitesmoke;
+          --base: 4px;
+        }
+      }
+
+      /* css에서도 자주 쓰는 것들은 변수 설정 가능 */
+      /* 자주 쓰이는 상수 값들을 그냥 다 써버리는 것을 */
+      /* hard coding이라고 함 */
+      /* js처럼 전역변수, 지역변수 다 됨 */
+    </style>
+  </head>
+  <body>
+    <ul class="first-list">
+      <li>Orange</li>
+      <li>Apple</li>
+    </ul>
+    <ul class="second-list">
+      <li>Korea</li>
+      <li>Japan</li>
+      <li>China</li>
+    </ul>
+  </body>
+</html>
