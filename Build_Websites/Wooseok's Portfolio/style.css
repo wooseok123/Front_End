@@ -192,11 +192,13 @@ p {
 
 .major {
     text-align: center;
+    margin : 10px 30px;
 }
 
 .about__majors {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 80px 0;
 }
 
