@@ -101,13 +101,22 @@ p {
 /* Navbar */
 
 #navBar {
+    width: 100%;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     /* 수평축에서 서로 간 거리를 둠 */
-    background-color: var(--color-pink);
+    background-color: transparent;
     align-items: center;
     color: var(--color-white);
     padding: 16px;
+    transition: all var(--animation-duration) ease-in-out;
+    z-index: 1;
+}
+
+#navBar.navbar--dark {
+    background-color: #7E83A2;
+    padding : 8px;
 }
 
 .navBar__logo {
@@ -156,6 +165,7 @@ p {
 #home {
     background: url("imgs/home-background.png") center/cover no-repeat;
     padding: 40px;
+    padding-top: 100px;
     text-align: center;
 }
 
@@ -388,7 +398,7 @@ p {
     width: 280px;
     height: 250px;
     margin: 2px;
-    position: relative;
+    position:sticky;
     display: flex;
     justify-content: center;
     align-items: center;
