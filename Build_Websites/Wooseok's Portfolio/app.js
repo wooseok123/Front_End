@@ -20,29 +20,44 @@ const navArr = Array.prototype.slice.call(navbar_menu);
 const section = document.querySelectorAll("section");
 
 function moveSection(event) {
-  const btnIndex = Number(navArr.indexOf(event.target));
-  window.scrollTo({
-    top: section[btnIndex].offsetTop-86,
-    behavior : 'smooth',
-  })
+  const btnIndex = navArr.indexOf(event.target);
+  scrolling(btnIndex);
 }
 
 for (const menu of navArr) {
   menu.addEventListener('click',moveSection);
 }
 
-// ELLIES'S
-const navbarMenu = document.querySelector('.navbar__menu');
-navbar_menu.addEventListener('click',(event) => {
-  const target = event.target;
-  const link = targer.dataset.link;
-  if(link == null) {
-    return;
-  }
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView();
+// // ELLIES'S
+// const navbarMenu = document.querySelector('.navbar__menu');
+// navbar_menu.addEventListener('click',(event) => {
+//   const target = event.target;
+//   const link = targer.dataset.link;
+//   if(link == null) {
+//     return;
+//   }
+//   const scrollTo = document.querySelector(link);
+//   scrollTo.scrollIntoView();
+// })
+
+// navbar 메뉴에 data-link 속성을 추가하여 각 섹션의 아이디를 달아줌
+
+// Handling button move to contact section!
+
+const ContactMeBtn = document.querySelector(".home__contact");
+
+ContactMeBtn.addEventListener("click",() => {
+  const btnIndex = 5;
+  scrolling(btnIndex);
 })
 
+function scrolling (btnIndex) {
+  const index = Number(btnIndex);
+  window.scrollTo({
+    top: section[index].offsetTop-86,
+    behavior : 'smooth',
+  })
+}
 
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
