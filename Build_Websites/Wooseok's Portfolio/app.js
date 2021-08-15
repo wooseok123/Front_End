@@ -51,6 +51,31 @@ ContactMeBtn.addEventListener("click",() => {
   scrolling(btnIndex);
 })
 
+
+// Make section slowlyy fade to transparent as the window scrolls down
+
+let height = 0;
+for (const page of section) {
+  height += page.scrollHeight-80;
+  page.realHeight = height
+}
+
+document.addEventListener('scroll',() => {
+  console.log(scrollY);
+  section.forEach((section) => {
+    if (window.scrollY < section.realHeight -300) {
+      section.style.opacity = 1;
+    } else {
+      section.style.opacity = 1 - (window.scrollY / (section.realHeight+200));
+    }
+  })
+})
+
+
+
+
+
+
 function scrolling (btnIndex) {
   const index = Number(btnIndex);
   window.scrollTo({
@@ -58,7 +83,6 @@ function scrolling (btnIndex) {
     behavior : 'smooth',
   })
 }
-
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
 

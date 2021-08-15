@@ -169,6 +169,10 @@ p {
     text-align: center;
 }
 
+.home__container {
+    height: 100%;
+}
+
 .home__avatar {
     width: 250px;
     height: 250px;
