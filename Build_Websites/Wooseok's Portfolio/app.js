@@ -61,13 +61,32 @@ for (const page of section) {
 }
 
 document.addEventListener('scroll',() => {
-  console.log(scrollY);
   section.forEach((section) => {
     if (window.scrollY < section.realHeight -300) {
       section.style.opacity = 1;
     } else {
       section.style.opacity = 1 - (window.scrollY / (section.realHeight+200));
     }
+  })
+})
+
+// show "Arrow up" button when scrolling down
+
+const ArrowBtn = document.querySelector('.arrow-Up');
+
+document.addEventListener('scroll',() => {
+  if (window.scrollY > section[0].realHeight/2) {
+    ArrowBtn.classList.add("showUp");
+  } else {
+    ArrowBtn.classList.remove("showUp");
+  }
+})
+
+// handle click on the "arrow up" button
+ArrowBtn.addEventListener('click',() => {
+  window.scrollTo({
+    top : section[0].offsetTop,
+    behavior : "smooth",
   })
 })
 

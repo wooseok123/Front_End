@@ -535,6 +535,43 @@ p {
     transition: all var(--animation-duration) ease-in;
 }
 
+
+/* Arrow up */
+
+.arrow-Up {
+    position: fixed;
+    right: 6vw;
+    bottom: 6vw;
+    border-radius: 50%;
+    background-color: #7E83A2;
+    padding: 15px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 500ms ease-in-out;
+    pointer-events: none;
+}
+
+/* display : none인 상태에서는 document model에서 없어지기 때문에 */
+/* 애니메이션을 주기 힘듦 */
+/* opacitiy를 0으로 주고 이후 pointer-event를 이용해 조절 */
+
+.arrow-Up i {
+    font-size: var(--font-medium);
+    color: var(--color-white);
+}
+
+.showUp {
+    transition: all 500ms ease-in-out;
+    transform: translateY(0px);
+    opacity: 1;
+    pointer-events : auto;
+}
+
+
 /* For below 768px screen width */
 @media screen and (max-width : 768px) {
     .navbar__toggle-btn {
