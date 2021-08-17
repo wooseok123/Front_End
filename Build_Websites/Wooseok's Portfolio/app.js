@@ -92,7 +92,8 @@ ArrowBtn.addEventListener('click',() => {
 
 // Project
 const workBtnContainer = document.querySelector(".work__categories");
-const projectContainer = document.querySelector(".work__projects");
+const categories = document.querySelectorAll(".category__btn")
+const projectContainer = document.querySelector(".work__projects"); 
 const projects = document.querySelectorAll('.project');
 
 workBtnContainer.addEventListener('click',(event) => {
@@ -101,6 +102,19 @@ workBtnContainer.addEventListener('click',(event) => {
     return;
   }
   projectContainer.classList.add('anim-out');
+
+  const selected = document.querySelector('.category__btn.selected');
+  selected.classList.remove('selected');
+  const target = event.target.nodeName === "BUTTON" ? event.target : event.target.parentNode;
+  target.classList.add('selected');
+
+  categories.forEach((category) => {
+    if(filter == category.dataset.filter) {
+      category.classList.add('actvie');
+    } else {
+      category.classList.remove('actvie');
+    }
+  });
   
   setTimeout(() => {
     projects.forEach((project) => {
