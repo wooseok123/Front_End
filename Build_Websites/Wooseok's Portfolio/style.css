@@ -388,7 +388,6 @@ p {
     top: -20px;
     left: 4px;
     opacity: 0;
-    
 }
 
 
@@ -396,6 +395,14 @@ p {
     display : flex;
     flex-wrap: wrap;
     justify-content: center;
+    opacity: 1;
+    transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.anim-out {
+    opacity: 0;
+    transform: scale(0.99) translateY(20px);
+    
 }
 
 .project {
@@ -407,7 +414,12 @@ p {
     justify-content: center;
     align-items: center;
     background-color: var(--color-light-white);
+    vertical-align:middle;
     /* 이미지 가로-세로 정렬 */
+}
+
+.project.invisible {
+    display: none;
 }
 
 .project__img {
