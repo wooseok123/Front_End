@@ -42,6 +42,21 @@ for (const menu of navArr) {
 
 // navbar 메뉴에 data-link 속성을 추가하여 각 섹션의 아이디를 달아줌
 
+// show navbar list when clicking toggle btn
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+const navbarMenu = document.querySelector('#navBar');
+toggleBtn.addEventListener('click',() => {
+  navbarMenu.classList.toggle('visible');
+})
+
+// remove navbar list when scrolling 
+
+document.addEventListener('scroll',() => {
+  if(navbarMenu.classList.contains('visible')){
+    navbarMenu.classList.remove('visible');
+  }
+})
+
 // Handling button move to contact section!
 
 const ContactMeBtn = document.querySelector(".home__contact");
@@ -52,7 +67,7 @@ ContactMeBtn.addEventListener("click",() => {
 })
 
 
-// Make section slowlyy fade to transparent as the window scrolls down
+// Make section slowlyy fade to transparent as tnavBar__menuhe window scrolls down
 
 let height = 0;
 for (const page of section) {
@@ -62,7 +77,7 @@ for (const page of section) {
 
 document.addEventListener('scroll',() => {
   section.forEach((section) => {
-    if (window.scrollY < section.realHeight -300) {
+    if (window.scrollY < section.realHeight - section.scrollHeight * 0.2) {
       section.style.opacity = 1;
     } else {
       section.style.opacity = 1 - (window.scrollY / (section.realHeight+200));

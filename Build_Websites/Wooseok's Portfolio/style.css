@@ -110,13 +110,12 @@ p {
     align-items: center;
     color: var(--color-white);
     padding: 16px;
-    transition: all var(--animation-duration) ease-in-out;
     z-index: 1;
 }
 
-#navBar.navbar--dark {
+#navBar.navbar--dark{
     background-color: #7E83A2;
-    padding : 8px;
+    transition: all var(--animation-duration) ease-in-out;
 }
 
 .navBar__logo {
@@ -158,6 +157,7 @@ p {
     /* opacity를 이용하는 경우도 있는데, */
     /* 그럴 경우 클릭이 되긴 함.. */
 }
+
 /* Home */
 
 #home {
@@ -446,11 +446,11 @@ p {
 .project:hover .project__description {
     transform : translateY(0px);
     transition: all var(--animation-duration) ease-in;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .project__description h3 {
-    color: var(--color-white);
+    color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -458,9 +458,9 @@ p {
     content : '';
     position: relative;
     left: 50%;
-    width: 25px;
+    width: 40px;
     height: 7px;
-    margin-left: -12px;
+    transform: translateX(-50%);
     background-color: var(--color-dark-white);
     margin-top: 8px;
 }
@@ -587,15 +587,39 @@ p {
     .navbar__toggle-btn {
         display: block;
     }
+
+    /* #navBar.navbar--dark .navbar__toggle-btn {
+        transform: translateY(-8px) translateX(10px);
+        transition: all var(--animation-duration) ease-in-out;
+    } */
+
+    /*#navBar .navbar__toggle-btn {
+        transform: translateX(0px) translateY(0px);
+        transition: all var(--animation-duration) ease-in-out;
+    } */
     #navBar {
         flex-direction: column;
         align-items: flex-start;
+        
     }
+
     .navBar__menu {
         flex-direction: column;
         width: 100%;
         display: none;
+        background-color: #7E83A2;
+        margin-bottom: 0px;
     }
+
+
+    #navBar.visible {
+        background-color: #7E83A2;
+    }
+
+    #navBar.visible .navBar__menu {
+        display: block;
+    }
+
     .about__majors {
         flex-direction: column;
         margin: 40px 0px;
