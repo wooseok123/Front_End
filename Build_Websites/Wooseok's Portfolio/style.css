@@ -584,6 +584,20 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width : 768px) {
+    :root {
+            /* Font Size */
+        --font-large : 30px;
+        --font-medium : 18px;
+        --font-regular : 16px;
+        --font-small : 14px;
+        --font-micro : 12px;
+    }
+
+    .section {
+        padding: 16px;
+        text-align: center;
+    }
+
     .navbar__toggle-btn {
         display: block;
     }
@@ -622,18 +636,41 @@ p {
 
     .about__majors {
         flex-direction: column;
-        margin: 40px 0px;
+        margin: 20px 0px;
     }
     .skillset {
         flex-direction: column;
     }
     .project {
-        flex-grow: 1;;
+        flex-grow: 1;
     }
+    .testimonial {
+        flex-direction: column;
+        margin: 32px 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .testimonial__speech-bubble {
+        order: 1;
+        /* 절대적인 순서를 정하는 방법 (0이 제일 우선) */
+    }
+    /* .testimonial:nth-child(even) {
+        flex-direction: column-reverse;
+    } */
     .testimonial__avatar {
-        width: 80px;
-        height: 80px;
+        margin-bottom: 10px;
+        width: 120px;
+        height: 120px;
     }
+    .testimonial__avatar:nth-child(odd) {
+        margin-right: 0px;
+    }
+    .testimonial__avatar:nth-child(even) {
+        margin-left: 0px;
+    }
+    /* 더 세부적일수록 먼저 적용 */
+
     /* 차이점, 즉 보여지고 안보여지고 하는 아이템에 대해서만 */
     /* 최소한의 것만 미디어쿼리 scope 안에서 작성 */
 }

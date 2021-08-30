@@ -4,7 +4,6 @@
 // Make navbar trasnparent when it is on the top
 const navbar = document.querySelector('#navBar');
 const navbarHeight = navbar.getBoundingClientRect().height;
-console.log(navbar);
 document.addEventListener('scroll',() => {
   if(window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark');
@@ -69,18 +68,20 @@ ContactMeBtn.addEventListener("click",() => {
 
 // Make section slowlyy fade to transparent as tnavBar__menuhe window scrolls down
 
-let height = 0;
-for (const page of section) {
-  height += page.scrollHeight-80;
-  page.realHeight = height
-}
+
 
 document.addEventListener('scroll',() => {
-  section.forEach((section) => {
-    if (window.scrollY < section.realHeight - section.scrollHeight * 0.2) {
-      section.style.opacity = 1;
+  let height = 0;
+  for (const page of section) {
+    height += page.clientHeight;
+    page.realHeight = height;
+  }
+
+  section.forEach((page) => {
+    if (window.scrollY < page.realHeight - page.clientHeight * 0.2) {
+      page.style.opacity = 1;
     } else {
-      section.style.opacity = 1 - (window.scrollY / (section.realHeight+200));
+      page.style.opacity = 1 - (window.scrollY / (page.realHeight));
     }
   })
 })
