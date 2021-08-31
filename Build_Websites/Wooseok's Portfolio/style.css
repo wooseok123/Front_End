@@ -358,6 +358,7 @@ p {
    font-size: var(--font-regular);
    padding: 8px 20px;
    width: 160px;
+   position: relative;
 }
 
 
@@ -382,9 +383,8 @@ p {
     width: 24px;
     line-height: 24px;
     display: inline-block;
-    position: relative;
-    top: -20px;
-    left: 4px;
+    position: absolute;
+    top : 4px;
     opacity: 0;
 }
 
@@ -554,9 +554,8 @@ p {
     bottom: 6vw;
     border-radius: 50%;
     background-color: #7E83A2;
-    padding: 15px;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     text-align: center;
     cursor: pointer;
     opacity: 0;
@@ -570,8 +569,9 @@ p {
 /* opacitiy를 0으로 주고 이후 pointer-event를 이용해 조절 */
 
 .arrow-Up i {
-    font-size: var(--font-medium);
+    font-size: var(--font-large);
     color: var(--color-white);
+    line-height: 80px;
 }
 
 .showUp {
@@ -634,6 +634,10 @@ p {
         display: block;
     }
 
+    .home__avatar {
+        width: 180px;
+        height: 180px;
+
     .about__majors {
         flex-direction: column;
         margin: 20px 0px;
@@ -644,6 +648,13 @@ p {
     .project {
         flex-grow: 1;
     }
+
+    .category__btn {
+        padding: 6px 14px;
+        width: 100%;
+        margin : 4px;
+     }
+
     .testimonial {
         flex-direction: column;
         margin: 32px 0;
@@ -669,6 +680,17 @@ p {
     .testimonial__avatar:nth-child(even) {
         margin-left: 0px;
     }
+
+    .arrow-Up {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .arrow-Up i {
+        line-height: 60px;
+    }
+
     /* 더 세부적일수록 먼저 적용 */
 
     /* 차이점, 즉 보여지고 안보여지고 하는 아이템에 대해서만 */

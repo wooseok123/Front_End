@@ -167,7 +167,7 @@ workBtnContainer.addEventListener('click',(event) => {
 function scrolling (btnIndex) {
   const index = Number(btnIndex);
   window.scrollTo({
-    top: section[index].offsetTop-86,
+    top: section[index].offsetTop-66,
     behavior : 'smooth',
   })
 }
