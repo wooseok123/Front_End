@@ -137,13 +137,15 @@ p {
     min-width: 90px;
     cursor: pointer;
     border-radius: var(--size-border-radius);
-    border : 1px solid transparent;
     /* 있긴 하지만 보이지 않게 하다가 hover 시 색이 나오는 걸로 */
+}
+
+.navBar__menu__item.active {
+    border : 1px solid var(--color-white)
 }
 
 .navBar__menu__item:hover {
     border : 1px solid var(--color-white);
-    background-color: var(--color-dark-pink);
     border-radius: 4px;
 }
 
@@ -637,6 +639,7 @@ p {
     .home__avatar {
         width: 180px;
         height: 180px;
+    }
 
     .about__majors {
         flex-direction: column;

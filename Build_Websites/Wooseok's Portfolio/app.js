@@ -21,6 +21,7 @@ const section = document.querySelectorAll("section");
 function moveSection(event) {
   const btnIndex = navArr.indexOf(event.target);
   scrolling(btnIndex);
+
 }
 
 for (const menu of navArr) {
@@ -66,12 +67,18 @@ ContactMeBtn.addEventListener("click",() => {
 })
 
 
-// Make section slowlyy fade to transparent as tnavBar__menuhe window scrolls down
+// Make section slowly fade to transparent as navBar__menu window scrolls down
 
 
+// scroll이라는 것을 콜백함수에 등록하는 것 자체가 너무 코드가 비효율적
+// 물론 debounce나 쓰롤링? 같은 것을 이용해 빈번히 나오지 않도록 할 수도 있지만..
+// intersection observer를 통해! 더 유용하게 쓸 수 있음
+// ex) 사용자에게 보여지는 화면에서만 dom요소를 등록하여 최적화
 
+// ->나중에 한 번 작업하자..
 document.addEventListener('scroll',() => {
-  let height = 0;
+
+  let height = 0
   for (const page of section) {
     height += page.clientHeight;
     page.realHeight = height;
@@ -172,6 +179,53 @@ function scrolling (btnIndex) {
   })
 }
 
+const sectionIds = [
+  '#home',
+  '#about',
+  '#skills',
+  '#work',
+  '#testimonials',
+  '#contact',
+]
+
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id) => document.querySelector(`[data-link="${id}"]`))
+
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0]
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove('active');
+  selectedNavItem = selected;
+  selectedNavItem.classList.add('active');
+}
+
+const observerOptions = {
+  root : null,
+  rootMargin : '0px',
+  threshold : 0.3,
+};
+
+
+const observerCallback = (entries, observer) => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting && entry.intersectionRatio > 0) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`)
+      if(entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else {
+        selectedNavIndex = index - 1;
+      }
+    }
+  })
+};
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section => observer.observe(section));
+
+window.addEventListener('scroll',() => {
+  selectNavItem(navItems[selectedNavIndex]);
+})
+
+// 한번 더 볼 필요가 있다..!
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
 
 // https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements
