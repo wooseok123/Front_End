@@ -76,7 +76,7 @@ function squareBounce() {
 };
 
 
-setInterval(chooseRandom,10);
+setInterval(chooseRandom,30);
 
 
 
