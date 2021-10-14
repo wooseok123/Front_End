@@ -5,6 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>옹달샘</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,6 +25,159 @@
       </ul>
     </nav>
   </header>
+  <section class="overview">
+    <div class="overview__main">
+      <video 
+        src="imgs/overview_1.mp4" 
+        width="100%"
+        height="100%" 
+        autoplay
+        muted
+      >
+      </video>
+    </div>
+  </section>
+  <section class="waterCS">
+    <article class="waterCS__Container">
+      <h1 class="waterCS__title">물 상식을 알고 갑시다</h1>
+      <div class="waterCS__contents">
+        <div class="waterCS__content">
+          <h2>1. 물의 미네랄 함량이 많으면 좋아요?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>2. 불소는 있으면 몸에 안좋다던데...?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>3. 페트병이 직사광선 째면 미세 플라스틱?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>4. 약알칼리? 알칼리? ph?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>5. 먹는샘물? 혼합물? 수소수? 해양 심층수?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>6. KI, OI지수? 경수, 연수?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>7. 브랜드보단 수원지를 보자</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>8. 맛있는 물이 그래서 뭔데요?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>9. 그래서 요약좀 해주세요</h2>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="findWaterContainer">
+    <div class="findWater">
+      <h2 class="findWater__title">안전하고 맛있는 옹달샘 찾기</h2>
+      <div class="findWater__Filter">
+        <!-- <div class="waterInfo Calcium">
+          <div class="element">
+            <h3>칼슘</h3>
+            <i class="far fa-question-circle"></i>
+          </div>
+          <input type="range" value="medium" id="Ca" min="0" max="2" step="1" list="tickmarks">
+          <datalist>
+            <option value="low">적음</option>
+            <option value="medium">보통</option>
+            <option value="high">많음</option>
+          </datalist>
+        </div>
+        <div class="waterInfo Kalium">
+          <div class="element">
+            <h3>칼륨</h3>
+            <i class="far fa-question-circle"></i>
+          </div>
+          <input type="range" value="medium" id="K" min="0" max="2" step="1" list="tickmarks">
+          <datalist>
+            <option value="low">적음</option>
+            <option value="medium">보통</option>
+            <option value="high">많음</option>
+          </datalist>
+        </div>
+        <div class="waterInfo Sodium">
+          <div class="element">
+            <h3>나트륨</h3>
+            <i class="far fa-question-circle"></i>
+          </div>
+          <input type="range" value="medium" id="Na" min="0" max="2" step="1" list="tickmarks">
+          <datalist>
+            <option value="low">적음</option>
+            <option value="medium">보통</option>
+            <option value="high">많음</option>
+          </datalist>
+        </div>
+        <div class="waterInfo Magnesium">
+          <div class="element">
+            <h3>마그네슘</h3>
+            <i class="far fa-question-circle"></i>
+          </div>
+          <input type="range" value="medium" id="Mg" min="0" max="2" step="1" list="tickmarks">
+          <datalist>
+            <option value="low">적음</option>
+            <option value="medium">보통</option>
+            <option value="high">많음</option>
+          </datalist>
+        </div> -->
+        <div class="waterInfo fluorine">
+          <div class="element">
+            <h3>불소</h3>
+            <i class="far fa-question-circle"></i>
+          </div>
+          <label for="F">불소 미함유</label>
+          <input type="checkbox" id="F">
+        </div>
+        <div class="waterInfo quality">
+          <div class="element">
+            <h3>먹는물영업자 위반현황</h3>
+            <i class="far fa-question-circle"></i>
+          </div>
+          <label for="F">생수 부적합 제외</label>
+          <input type="checkbox" id="Quality">
+        </div>
+        <div class="waterInfo quality">
+          <div class="element">
+            <h3>먹는샘물</h3>
+            <i class="far fa-question-circle"></i>
+          </div>
+          <label for="F">혼합물 제외</label>
+          <input type="checkbox" id="Quality">
+        </div>        
+      </div>
+      <div class="waterList">
+        <div class="waterList__item">
+          <h1>삼다수</h1>
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+          <h2>260원 (500ml기준)</h2>
+        </div>
+        <div class="waterList__item">
+          <h1>아이시스</h1>
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+          <h2>220원 (500ml기준)</h2>
+        </div>
+        <div class="waterList__item">
+          <h1>백산수</h1>
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+          <h2>150원 (500ml기준)</h2>
+        </div>
+        <div class="waterList__item">
+          <h1>평창수</h1>
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+          <h2>490원 (500ml기준)</h2>
+        </div>
+        <div class="waterList__item">
+          <h1>에비앙</h1>
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+          <h2>740원 (500ml기준)</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
   
 
 

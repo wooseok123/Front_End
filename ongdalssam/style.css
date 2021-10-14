@@ -24,9 +24,18 @@
   font-family: 'Poor Story', cursive;
 }
 
+body {
+  margin: 0px;
+}
 
+section {
+  width: 100%;
+  margin-top: 20px;
+}
 
 header {
+  margin-left: 3em;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -38,15 +47,112 @@ header nav ul {
 }
 
 .navBar__menu__item {
-  width: 90px;
-  padding: 13px 0px;
+  padding: 8px 18px;
   margin-right: 30px;
   list-style: none;
   cursor: pointer;
-  font-size: var(--font-medium);
+  font-size: var(--font-large);
   border-radius:var(--size-border-radius);
 }
 
 .navBar__menu__item:hover {
+  background-color: var(--color-light-blue);
+}
+
+.overview__main {
+}
+
+.waterCS__Container {
+  text-align: center;
+}
+
+.waterCS__title {
+  font-size: var(--font-big);
+}
+
+.waterCS__contents {
+  text-align: center;
+  margin : 50px 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.waterCS__content {
+  text-align: center;
+  margin: 20px 10px;
+  width: 450px;
+  border : solid 0.5px;
+  border-radius: var(--size-border-radius);
+  cursor: pointer;
+}
+
+.findWater {
+  margin: 40px;
   background-color: var(--color-beige);
+  text-align: center;
+}
+
+.findWater__title {
+  font-size: var(--font-big);
+  padding: 50px 0px 0px 0px;
+}
+
+.findWater__Filter {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.findWater__Filter datalist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.waterInfo {
+  margin: auto;
+  width: 300px;
+  height: 150px;
+  text-align: center;
+}
+
+.findWater__Filter datalist option {
+  width: 10px;
+  height: 10px;
+}
+
+input[type=range] {
+  width: 150px;
+}
+
+.element {
+  font-size: var(--font-medium);
+  display: flex;
+  justify-content: center;
+}
+
+.element i {
+  margin-left: 10px;
+  line-height: 90px;
+}
+
+.waterList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.waterList__item {
+  width: 200px;
+  height: 220px;
+  font-size: var(--font-small);
+  background-color: white;
+  border-radius: var(--size-border-radius);
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  margin: 5px 10px;
+}
+
+.waterList__item h2 {
+  margin: 0px;
 }
