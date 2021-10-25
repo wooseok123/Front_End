@@ -88,7 +88,7 @@ header nav ul {
 }
 
 .CS_modal {
-  display: none;
+  opacity: 0;
   position: fixed;
   left: 0;
   top: 0;
@@ -98,12 +98,15 @@ header nav ul {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
   overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal_contents {
   background-color: #fefefe;
-  width: 50%;
-  height: 400px;
+  width: 70%;
   margin: auto;
   padding: 20px;
 }
