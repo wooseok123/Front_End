@@ -113,3 +113,24 @@ modalClose.addEventListener("click",() => {
   modalContainer.style.opacity = 0;
   modalContainer.style.pointerEvents = 'none';
 })
+
+// 물 찾기에서 물음표를 hover하면 부가 설명창이 나옴
+
+const questionMark = Array.from(document.querySelectorAll('.question'));
+const waterInfoDetail = Array.from(document.querySelectorAll('.element__detail'))
+
+function toggleDetail(event) {
+  const index = questionMark.indexOf(event.target);
+  const targetDetail = waterInfoDetail[index];
+  return targetDetail;
+} 
+
+questionMark.forEach( (question) => question.addEventListener("mouseover",(event) => {
+  const targetDetail = toggleDetail(event)
+  targetDetail.style.display = "block";
+}))
+
+questionMark.forEach( (question) => question.addEventListener("mouseout",(event) => {
+  const targetDetail = toggleDetail(event)
+  targetDetail.style.display = "none";
+}))
