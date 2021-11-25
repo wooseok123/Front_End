@@ -136,33 +136,14 @@ header nav ul {
   padding: 50px 0px 0px 0px;
 }
 
-.findWater__Filter {
-  margin: 0px 300px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.findWater__Filter datalist {
-  display: flex;
-  justify-content: space-between;
-}
-
 .waterInfo {
-  margin: auto;
-  width: 300px;
-  height: 150px;
   text-align: center;
+  height: 150px;
 }
 
-.findWater__Filter datalist option {
-  width: 10px;
-  height: 10px;
-}
-
-input[type=range] {
+/* input[type=range] {
   width: 150px;
-}
+} */
 
 .element {
   font-size: var(--font-medium);
@@ -180,14 +161,14 @@ input[type=range] {
 }
 
 .element__detail {
-  width: 400px;
+  width: 200px;
   background-color: rgba(255,255,255,0.97);
   border-radius: var(--size-border-radius);
   position: absolute;
   left: 1px;
   top: 40px;
   z-index: 1;
-  font-size: var(--font-micro);
+  font-size: var(--font-small);
   display: none;
   pointer-events: none;
   margin: 0px;
