@@ -31,16 +31,25 @@
         </button>
       );
 
+      let counter = 0;
+
+      const countUp = () => {
+        counter++;
+        Render();
+      };
+
       const Container = () => (
         <div>
-          <Title />
-          <Button />
+          <h3>Total clicks : {counter}</h3>
+          <button onClick={countUp}>Click me</button>
         </div>
       );
       /// 만든 컴포넌트는 반드시 대문자로 시작하도록 하자
       // 소문자일 경우 html component들과 겹칠 수 있다
+      // ReactJS는 바뀐 부분만 업데이트 하므로 더 interactive 한 앱을 만들 수 있다.
+      const Render = () => ReactDOM.render(<Container />, root);
 
-      ReactDOM.render(<Container />, root);
+      Render();
     </script>
   </body>
 </html>
