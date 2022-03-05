@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+
+}
+
+label, input {
+    display: inline-block;
+}
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    border: solid 5px black;
+}
+
+.login_form div {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    line-height: 50px;
+}
+
+.Input_label {
+    width: 100px;
+    margin: auto;
+}
