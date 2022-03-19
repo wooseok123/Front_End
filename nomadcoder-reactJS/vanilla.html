@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="stlye.css" />
   </head>
 
   <body>
@@ -30,27 +31,106 @@
           Click me
         </button>
       ); */
+      const MinHourConvert = () => {
+        const [minutes, setMinutes] = React.useState();
+        const [hours, setHours] = React.useState();
 
-      const App = () => {
-        const data = React.useState(0);
-        const [counter, setCounter] = data; // = const counter = data[0]
-        const onClick = () => {
-          //setCounter(counter + 1); 초기값을 지정해주지 못하기 때문에 외부에서 변경될 가능성 농후
-          setCounter((counter) => counter + 1);
+        const onChange = (event) => {
+          setTime(event);
         };
+
+        function setTime(event) {
+          let eventValue = event.target.value;
+          if (event.target.id == "minutes") {
+            setMinutes((minutes) => eventValue);
+            setHours((hours) => (eventValue / 60).toFixed(2));
+          } else {
+            setHours((minutes) => eventValue);
+            setMinutes((minutes) => (eventValue * 60).toFixed(2));
+          }
+        }
+
         return (
           <div>
-            <h3>Total clicks : {counter}</h3>
-            <button onClick={onClick}>Click me</button>
+            <h1>Time Converter!</h1>
+            <div>
+              <label for="minutes">분</label>
+              <input
+                type="number"
+                id="minutes"
+                onChange={onChange}
+                value={minutes}
+              />
+            </div>
+            <div>
+              <label for="hours">시</label>
+              <input
+                type="number"
+                id="hours"
+                onChange={onChange}
+                value={hours}
+              />
+            </div>
           </div>
         );
       };
+      const KmMileConvert = () => {
+        const [km, setKm] = React.useState();
+        const [mile, setMile] = React.useState();
 
+        const onChange = (event) => {
+          setDistance(event);
+        };
+
+        function setDistance(event) {
+          const milePerKm = 0.621371;
+          const kmPerMile = 1.609344;
+          let eventValue = event.target.value;
+          if (event.target.id == "km") {
+            setKm((km) => eventValue);
+            setMile((mile) => (eventValue * milePerKm).toFixed(2));
+          } else {
+            console.log("mile");
+            console.log(eventValue);
+            setMile((mile) => eventValue);
+            setKm((km) => (eventValue * kmPerMile).toFixed(2));
+          }
+        }
+        return (
+          <div>
+            <h1>Distacne Transformer</h1>
+            <div>
+              <label for="km">킬로미터</label>
+              <input type="number" id="km" onChange={onChange} value={km} />
+            </div>
+            <div>
+              <label for="mile">마일</label>
+              <input type="number" id="mile" onChange={onChange} value={mile} />
+            </div>
+          </div>
+        );
+      };
+      const App = () => {
+        const [index, setIndex] = React.useState(1);
+        const onSelect = (event) => {
+          setIndex(event.target.value);
+        };
+        return (
+          <div>
+            <h1>Select the converter you want </h1>
+            <select value={index} onChange={onSelect}>
+              <option value="1">Min & Hour</option>
+              <option value="2">Km & Mile</option>
+            </select>
+            {index == 1 ? <MinHourConvert /> : null}
+            {index == 2 ? <KmMileConvert /> : null}
+          </div>
+        );
+      };
       /// 만든 컴포넌트는 반드시 대문자로 시작하도록 하자
       // 소문자일 경우 html component들과 겹칠 수 있다
       // ReactJS는 바뀐 부분만 업데이트 하므로 더 interactive 한 앱을 만들 수 있다.
       const Render = () => ReactDOM.render(<App />, root);
-
       Render();
     </script>
   </body>
