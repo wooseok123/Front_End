@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Input from "./Input";
 
-function App() {
+const App = () => {
+  const winHeight = window.innerHeight;
+  const winWidth = window.innerWidth;
+  console.log(winHeight);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div
+      style={{
+        textAlign: "center",
+        display: "inline-block",
+        margin: "0 auto",
+      }}
+    >
+      <form>
+        <fieldset
+          style={{
+            lineHeight: "50px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <Input ID={"아이디"} width={150} fontSize={30} />
+          <Input ID={"패스워드"} width={150} fontSize={30} />
+          <button type="submit">로그인하기</button>
+        </fieldset>
+      </form>
     </div>
   );
-}
+};
 
 export default App;
+
+// resize 이벤트로 반응형 만들어야 함
