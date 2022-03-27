@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-      const Btn = ({ text, onClick }) => {
+      const Btn = ({ text, onClick, fontSize }) => {
         return (
           <button
             onClick={onClick}
@@ -25,7 +25,7 @@
               padding: "10px 20px",
               border: 0,
               borderRadius: 10,
-              fontSize: 18,
+              fontSize: fontSize,
             }}
           >
             {text}
@@ -46,13 +46,16 @@
           }
         };
         Btn.propTypes = {
-          text: PropTypes.string,
+          // text라는 이름의 str 값이 꼭 있어야 함
+          text: PropTypes.string.isRequired,
+          
           onClick: PropTypes.func,
+          fontSize: PropTypes.number,
         };
         // isRequired -> 필수적으로 들어가야 할 props 를 정의!
         return (
           <div>
-            <Btn text={value} onClick={changeValue} />
+            <Btn text={value} onClick={changeValue} fontSize={20} />
             <Btn text="Continue" />
           </div>
         );
