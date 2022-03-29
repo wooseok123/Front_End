@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>옹달샘</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="imgs/logo.png" alt="logo"></a>
+    </div>
+    <nav id="navBar">
+      <ul class="navBar__menu">
+        <li class="navBar__menu__item">가치</li>
+        <li class="navBar__menu__item">물 찾기</li>
+        <li class="navBar__menu__item">물 상식</li>
+        <li class="navBar__menu__item">연락하기</li>
+      </ul>
+    </nav>
+  </header>
+  <section class="overview">
+    <div class="overview__main">
+      <video 
+        src="imgs/overview_1.mp4" 
+        width="100%"
+        height="100%" 
+        autoplay
+        muted
+      >
+      </video>
+    </div>
+  </section>
+  <section class="waterCS">
+    <article class="waterCS__Container">
+      <h1 class="waterCS__title">물 상식을 알고 갑시다</h1>
+      <div class="waterCS__contents">
+        <div class="waterCS__content">
+          <h2>1. 물의 미네랄 함량이 많으면 좋아요?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>2. 마그네슘, 칼슘, 칼륨, 나트륨 뭘 봐야하죠?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>3. 불소는 있으면 몸에 안좋다던데...?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>4. 페트병이 직사광선 째면 미세 플라스틱?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>5. 약알칼리? 알칼리? ph?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>6. 먹는샘물? 혼합물? 수소수? 해양 심층수?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>7. KI, OI지수?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>8. 경수? 연수?</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>9. 브랜드보단 수원지를 보자</h2>
+        </div>
+        <div class="waterCS__content">
+          <h2>10. 그래서 요약좀 해주세요</h2>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="findWaterContainer">
+    <div class="findWater">
+      <h2 class="findWater__title">안전하고 맛있는 옹달샘 찾기</h2>
+      <div class="findWater__Filter">
+        <div class="waterInfo fluorine">
+          <div class="element">
+            <h3>불소</h3>
+            <i class="far fa-question-circle question">
+              <div class="element__detail">
+                <p>불소의 포함 여부는 아직까지 논쟁거리입니다. 정확한 기준이 없기 때문입니다.<br>기준이 세워질 때까지 조심하고 싶거나 특히 아이를 키우는 분들은 체크하시면 좋겠습니다.</p>
+              </div>
+            </i>
+          </div>
+          <label for="F">불소 미함유</label>
+          <input type="checkbox" id="F">
+        </div>
+        <div class="waterInfo quality">
+          <div class="element">
+            <h3>먹는물영업자 위반현황</h3>
+            <i class="far fa-question-circle question">
+              <div class="element__detail">
+                <p>먹는물 관리법을 위반한 업체의 취수장에서 나온 모든 생수를 필터링합니다.(2021년 기준)</p>
+              </div>
+            </i>
+          </div>
+          <label for="F">생수 부적합 제외</label>
+          <input type="checkbox" id="Quality">
+        </div>
+        <div class="waterInfo spring">
+          <div class="element">
+            <h3>먹는샘물</h3>
+            <i class="far fa-question-circle question">
+              <div class="element__detail">
+                <p>무기질 함량에 큰 차이는 없지만, 증류수에 미네랄을 첨가해 만든 물은 제외합니다.</p>
+              </div>
+            </i>
+          </div>
+          <label for="F">혼합물 제외</label>
+          <input type="checkbox" id="Quality">
+        </div>        
+      </div>
+      <div class="waterList">
+        <div class="waterList__item">
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+          <div class="item_detail">
+            <h1>품명 : 삼다수</h1>
+            <h2>수원지 : 제주시 조천읍</h2>
+            <h2>가격 : </h2>
+          </div>
+        </div>
+        <div class="waterList__item">
+          <h1>아이시스</h1>
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+        </div>
+        <div class="waterList__item">
+          <h1>백산수</h1>
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+        </div>
+        <div class="waterList__item">
+          <h1>평창수</h1>
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+        </div>
+        <div class="waterList__item">
+          <h1>에비앙</h1>
+          <img src="imgs/samdasoo.jpg" alt="samdasoo" width="100px" height="100px">
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="CS_modal">
+    <div class="modal_contents">
+      <div class="modal_contents_top">
+        <span class="close">&times;</span>
+        <h1 class="modal_title"></h1>
+      </div>
+      <p class="modal_content"></p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

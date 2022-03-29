@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+:root {
+
+  /* Color */
+  --color-light-blue : #A2D2FF;
+  --color-beige : #FEF9EF;
+  --color-peach : #FF865E;
+  --color-yellow : #FEE440;
+
+  /* Font-size */
+  --font-big : 48px;
+  --font-large : 36px;
+  --font-medium : 24px;
+  --font-small : 18px;
+  --font-micro : 12px;
+
+  /* size */
+  --size-border-radius : 10px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poor Story', cursive;
+}
+
+body {
+  margin: 0px;
+}
+
+section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+header {
+  margin-left: 3em;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+header nav ul {
+  margin: 0px;
+  display: flex;
+}
+
+.navBar__menu__item {
+  padding: 8px 18px;
+  margin-right: 30px;
+  list-style: none;
+  cursor: pointer;
+  font-size: var(--font-large);
+  border-radius:var(--size-border-radius);
+}
+
+.navBar__menu__item:hover {
+  background-color: var(--color-light-blue);
+}
+
+.overview__main {
+}
+
+.waterCS__Container {
+  text-align: center;
+}
+
+.waterCS__title {
+  font-size: var(--font-big);
+}
+
+.waterCS__contents {
+  text-align: center;
+  margin : 50px 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.waterCS__content {
+  text-align: center;
+  margin: 20px 10px;
+  width: 450px;
+  border : solid 0.5px;
+  border-radius: var(--size-border-radius);
+  cursor: pointer;
+}
+
+.CS_modal {
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_contents {
+  background-color: #fefefe;
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+}
+
+.modal_title {
+  font-size: var(--font-medium);
+}
+
+.close {
+  font-size: var(--font-medium);
+  float: right;
+}
+.close:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.findWater {
+  margin: 40px;
+  background-color: var(--color-beige);
+  text-align: center;
+}
+
+.findWater__title {
+  font-size: var(--font-big);
+  padding: 50px 0px 0px 0px;
+}
+
+.waterInfo {
+  text-align: center;
+  height: 150px;
+}
+
+/* input[type=range] {
+  width: 150px;
+} */
+
+.element {
+  font-size: var(--font-medium);
+  display: flex;
+  justify-content: center;
+}
+
+.element i {
+  margin-left: 10px;
+  line-height: 90px;
+}
+
+.question {
+  position: relative;
+}
+
+.element__detail {
+  width: 200px;
+  background-color: rgba(255,255,255,0.97);
+  border-radius: var(--size-border-radius);
+  position: absolute;
+  left: 1px;
+  top: 40px;
+  z-index: 1;
+  font-size: var(--font-small);
+  display: none;
+  pointer-events: none;
+  margin: 0px;
+  line-height: normal;
+}
+
+.waterList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.waterList__item {
+  width: 200px;
+  height: 220px;
+  font-size: var(--font-small);
+  background-color: white;
+  border-radius: var(--size-border-radius);
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  margin: 5px 10px;
+}
+
+.waterList__item h2 {
+  margin: 0px;
+}
