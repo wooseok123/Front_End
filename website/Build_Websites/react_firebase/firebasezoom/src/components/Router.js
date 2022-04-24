@@ -17,7 +17,7 @@ const AppRouter = ({ isLoggedIn }) => {
       <Switch>
         {isLoggedIn ? (
           <>
-            <Route exact path="/home">
+            <Route exact path="/">
               <Home />
             </Route>
             <Route exact path="/profile">
@@ -38,3 +38,5 @@ const AppRouter = ({ isLoggedIn }) => {
 };
 
 export default AppRouter;
+
+//PR 용 아무 메시지
