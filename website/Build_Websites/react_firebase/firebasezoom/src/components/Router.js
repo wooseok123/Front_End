@@ -8,19 +8,21 @@ import Profile from "../routes/Profile";
 const AppRouter = ({ isLoggedIn }) => {
   return (
     <Router>
-      {isLoggedIn && <Navigation />}
-      <Routes>
-        {isLoggedIn ? (
-          <>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-          </>
-        ) : (
-          <>
-            <Route path="/" element={<Auth />} />
-          </>
-        )}
-      </Routes>
+      <React.StrictMode>
+        {isLoggedIn && <Navigation />}
+        <Routes>
+          {isLoggedIn ? (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<Auth />} />
+            </>
+          )}
+        </Routes>
+      </React.StrictMode>
     </Router>
   );
 };
