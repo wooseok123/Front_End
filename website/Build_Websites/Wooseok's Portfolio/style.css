@@ -52,6 +52,10 @@ a {
   color: var(--color-black);
 }
 
+.whiten {
+  color: var(--color-white);
+}
+
 ul {
   padding-left: 0;
 }
@@ -189,6 +193,16 @@ p {
   padding: 0px 20vw 0px 0px;
 }
 
+.rotate {
+  transform: rotate(-30deg) scale(1.1);
+  transition: all var(--animation-duration);
+}
+
+.MoveRotate {
+  transform: translate(0, 12vh) rotate(-30deg) scale(1.1);
+  transition: all var(--animation-duration);
+}
+
 .home__icon:hover i {
   transform: rotate(-30deg) scale(1.1);
   transition: all var(--animation-duration);
@@ -240,6 +254,21 @@ p {
 
 .about__container {
   text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.about__description {
+  width: 50vw;
+}
+
+.about__img {
+  margin-left: 5vw;
+  border-radius: 50%;
+}
+
+.about__img img {
+  margin: 0px;
 }
 
 .about__majors {

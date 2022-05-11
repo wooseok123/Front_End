@@ -23,16 +23,16 @@
     <nav id="navBar">
       <div class="navBar__logo">
         <!-- <img src="imgs/logo.png" alt="logo" width="40px" height="40px" /> -->
-        <a href="#">Wooseok</a>
+        <a class="logo__name" href="#">Wooseok</a>
       </div>
       <ul class="navBar__menu">
         <li class="navBar__menu__item" data-link="#home">Home</li>
         <li class="navBar__menu__item" data-link="#about">About</li>
         <li class="navBar__menu__item" data-link="#skills">Skills</li>
         <li class="navBar__menu__item" data-link="#work">My Work</li>
-        <li class="navBar__menu__item" data-link="#testimonials">
+        <!-- <li class="navBar__menu__item" data-link="#testimonials">
           Testimonial
-        </li>
+        </li> -->
         <li class="navBar__menu__item" data-link="#contact">Contact</li>
       </ul>
       <!-- Toggle Butoon -->
@@ -65,16 +65,28 @@
     <!-- About -->
     <section id="about" class="section section__container" data-filter="about">
       <div class="about__container">
-        <h1>About Me</h1>
-        <p>
-          <strong>'꿈꾸는 것을 현실로 구현하자'</strong>는 가치를 가진 다능인
-          한우석입니다. <br />현재 서강대학교 유럽문화학부 프랑스문화학과에
-          재학중이며 IT 회사 올유저닷넷에서 6개월간 서비스 기획인턴을 했습니다.
-          <br />프론트엔드에서 1년 정도 개발을 해왔으며, HTML,CSS,JS를 통한
-          웹사이트 제작과 Python을 통한 Web Scrapper 등의 프로젝트를
-          진행했습니다. <br />이상을 현실로 구현하는데 필요한 모든 것을 배우고자
-          노력합니다.
-        </p>
+        <div class="about__description">
+          <h1>About Me</h1>
+          <p>
+            This is <strong>Woo-seok HAN</strong>, a multipoteintialite who
+            believes in the idea of 'Let's make dreams come true.' I'm now
+            enrolled in Sogang University's Department of French Culture
+            of European Cultures and Languages and completed a six-month service
+            planning internship at AllUser.net, an IT company.I've been working
+            on projects like website development using HTML, CSS,  Js , and
+            React.js and also a web scraper using Python. I work hard to learn
+            everything I need to know in order to make my dream a reality.
+          </p>
+        </div>
+        <div class="about__img">
+          <img
+            src="imgs/about__profile.png"
+            alt="logo"
+            width="300px"
+            height="300px"
+            class="about__img"
+          />
+        </div>
       </div>
       <div class="about__majors">
         <div class="major">
@@ -174,10 +186,11 @@
         <h1>Skills</h1>
         <h2>Skills & Attributes</h2>
         <p>
-          새로운 것을 배우는 것을 즐기며, 다양한 것을 융합하여 문제를 해결하는
-          것을 좋아합니다. 다양한 리더 업무를 맡으며 프로젝트 진행과 더불어 팀
-          환경에서 업무를 원활히 수행할 수 있습니다. 맡은 바에 대해서는 책임감이
-          있으며, 세상을 더 효율적으로 시선에서 바라보려고 노력합니다.
+          I Enjoys learning new things and solving issues by combining different
+          ideas. I love to being in charge of various leadership roles as the
+          project progresses and the team grows. I can work efficiently in good
+          teamwork. ake responsibility for  my things. And i strive to see the
+          world more efficiently through my eyes.
         </p>
         <div class="skillset">
           <div class="skillset__left">
@@ -195,28 +208,37 @@
             <div class="skill">
               <div class="skill__description">
                 <span>CSS</span>
-                <span>99%</span>
+                <span>90%</span>
               </div>
               <div class="skill__bar">
-                <div class="skill__value" style="width: 99%"></div>
+                <div class="skill__value" style="width: 90%"></div>
               </div>
             </div>
             <div class="skill">
               <div class="skill__description">
                 <span>JAVASCRIPT</span>
-                <span>99%</span>
+                <span>85%</span>
               </div>
               <div class="skill__bar">
-                <div class="skill__value" style="width: 99%"></div>
+                <div class="skill__value" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>React</span>
+                <span>80%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 80%"></div>
               </div>
             </div>
             <div class="skill">
               <div class="skill__description">
                 <span>Pyhton</span>
-                <span>80%</span>
+                <span>89%</span>
               </div>
               <div class="skill__bar">
-                <div class="skill__value" style="width: 80%"></div>
+                <div class="skill__value" style="width: 89%"></div>
               </div>
             </div>
           </div>
@@ -248,13 +270,13 @@
     <section id="work" class="section" data-filter="work">
       <div class="section__container">
         <h1>My Work</h1>
-        <h3>Projects</h3>
+        <h3>Click to view details of projects!</h3>
         <div class="work__categories">
           <button class="category__btn selected" data-filter="*">
             All<span class="category__count">6</span>
           </button>
-          <button class="category__btn" data-filter="P5.js">
-            P5.js<span class="category__count">5</span>
+          <button class="category__btn" data-filter="front-end">
+            front-end<span class="category__count">5</span>
           </button>
           <button class="category__btn" data-filter="individual">
             individual<span class="category__count">1</span>
@@ -266,7 +288,7 @@
             href="https://short-adapter-86c.notion.site/ICC-Bokeh-7ca2884ecdb2414caab4a5e2622b357e"
             class="project"
             target="blank"
-            data-type="P5.js"
+            data-type="front-end"
           >
             <img
               src="imgs/projects/project1.png"
@@ -282,7 +304,7 @@
             href="https://short-adapter-86c.notion.site/ICC-Neuron-4e0a10ad443e4d748a8630d84242ee18"
             class="project"
             target="blank"
-            data-type="P5.js"
+            data-type="front-end"
           >
             <img
               src="imgs/projects/project2.png"
@@ -298,7 +320,7 @@
             href="https://short-adapter-86c.notion.site/ICC-Reed-the-conductor-7baa477f9e1441909fb531ea8566c644"
             class="project"
             target="blank"
-            data-type="P5.js"
+            data-type="front-end"
           >
             <img
               src="imgs/projects/project3.png"
@@ -314,7 +336,7 @@
             href="https://github.com/wooseok123/Front-end/tree/main/Build_Websites/Wooseok's%20Portfolio"
             class="project"
             target="blank"
-            data-type="P5.js"
+            data-type="front-end"
           >
             <img
               src="imgs/projects/project4.png"
@@ -330,7 +352,7 @@
             href="https://short-adapter-86c.notion.site/ICC-Music-Fountain-4da1fdc122534306a02c95bfdc1ffeda"
             class="project"
             target="blank"
-            data-type="P5.js"
+            data-type="front-end"
           >
             <img
               src="imgs/projects/project5.png"
@@ -346,7 +368,7 @@
             href="https://short-adapter-86c.notion.site/ICC-The-weather-changes-companies-7c7818b803354b52b5189c41e72f3451"
             class="project"
             target="blank"
-            data-type="P5.js"
+            data-type="front-end"
           >
             <img
               src="imgs/projects/project6.png"
@@ -374,6 +396,54 @@
               <span>Patent application</span>
             </div>
           </a>
+          <a
+            href="https://short-adapter-86c.notion.site/27ed89344ed7446a8f51c66d5389adbe"
+            class="project"
+            target="blank"
+            data-type="individual"
+          >
+            <img
+              src="imgs/projects/project8.png"
+              alt="plastic"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Non-label plastic</h3>
+              <span>민생규제혁신 공모전 우수제안</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/e9b75672602845958674700a6d9d4ee7"
+            class="project"
+            target="blank"
+            data-type="individual"
+          >
+            <img
+              src="imgs/projects/project9.png"
+              alt="delivery"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Delivery service for foreigners</h3>
+              <span>서강대학교 창업경진대회 우수상</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/AI-bde0fdc560a34649aeb0205b90173d31"
+            class="project"
+            target="blank"
+            data-type="individual"
+          >
+            <img
+              src="imgs/projects/project10.png"
+              alt="intern"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Alluser.net Business Planner & Development</h3>
+              <span>올유저닷넷 기획 인턴</span>
+            </div>
+          </a>
         </div>
       </div>
       <!-- 넣는 이미지의 파일도 많고 크기도 제각각일 수록 -->
@@ -383,7 +453,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="section" data-filter="testimonial">
+    <!-- <section id="testimonials" class="section" data-filter="testimonial">
       <div class="section__container">
         <h1>Testimonials</h1>
         <h3>See what they say about me</h3>
@@ -393,9 +463,9 @@
             alt="People"
             class="testimonial__avatar"
           />
-          <div class="testimonial__speech-bubble">
-            <!-- camel case를 쓰거나 -를 쓰거나 -->
-            <p>
+          <div class="testimonial__speech-bubble"> -->
+    <!-- camel case를 쓰거나 -를 쓰거나 -->
+    <!-- <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
               officia, hic rerum, debitis molestias autem ullam repellat,
               placeat nobis modi ipsum ut dolore nam explicabo adipisci incidunt
@@ -405,9 +475,9 @@
           </div>
         </div>
         <div class="testimonial">
-          <div class="testimonial__speech-bubble">
-            <!-- camel case를 쓰거나 -를 쓰거나 -->
-            <p>
+          <div class="testimonial__speech-bubble"> -->
+    <!-- camel case를 쓰거나 -를 쓰거나 -->
+    <!-- <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
               officia, hic rerum, debitis molestias autem ullam repellat,
               placeat nobis modi ipsum ut dolore nam explicabo adipisci incidunt
@@ -422,7 +492,7 @@
           />
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Contact -->
     <section id="contact" class="section" data-filter="contact">
@@ -437,7 +507,7 @@
         </a>
       </div>
       <p class="contact__rights">
-        2021 multi-potentialite - All rights reserved
+        2022 multi-potentialite - All rights reserved
       </p>
     </section>
 
