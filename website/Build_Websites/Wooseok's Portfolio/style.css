@@ -42,9 +42,9 @@
 }
 
 body {
-  margin: 0;
   font-family: "Open Sans", sans-serif;
   cursor: default;
+  margin: 0px;
 }
 
 a {
@@ -127,11 +127,10 @@ p {
   margin-left: 8px;
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-  padding: 0px 0px 0px 20vw;
+  padding: 0px 0px 0px 5vw;
 }
 
 .navBar__menu {
-  padding: 0px 20vw 0px 0px;
   display: flex;
   text-align: center;
 }
@@ -157,7 +156,7 @@ p {
 .navbar__toggle-btn {
   position: absolute;
   right: 32px;
-  top: 25px;
+  top: 17px;
   font-size: 24px;
   color: var(--color-white);
   display: none;
@@ -168,6 +167,7 @@ p {
 /* Home */
 
 #home {
+  width: 100%;
   padding: 40px;
   padding-top: 100px;
   text-align: center;
@@ -175,36 +175,42 @@ p {
 }
 
 .home__container {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .home__text {
   text-align: left;
-  padding: 0px 0px 0px 20vw;
   color: black;
 }
 
 .home__icon {
-  font-size: 200px;
-  padding: 0px 20vw 0px 0px;
+  font-size: 20vw;
+  margin-left: 5vw;
 }
 
-.rotate {
+.rotateLeft {
   transform: rotate(-30deg) scale(1.1);
   transition: all var(--animation-duration);
 }
 
-.MoveRotate {
+.MoveRotateLeft {
   transform: translate(0, 12vh) rotate(-30deg) scale(1.1);
   transition: all var(--animation-duration);
 }
 
-.home__icon:hover i {
-  transform: rotate(-30deg) scale(1.1);
+.rotateRight {
+  transform: rotate(30deg) scale(1.1);
+  transition: all var(--animation-duration);
+}
+
+.MoveRotateRight {
+  transform: translate(0, 12vh) rotate(30deg) scale(1.1);
   transition: all var(--animation-duration);
 }
 
@@ -247,6 +253,12 @@ p {
 
 /* About */
 
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .major {
   text-align: center;
   margin: 10px 10px;
@@ -256,19 +268,26 @@ p {
   text-align: left;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .about__description {
   width: 50vw;
+  text-align: left;
 }
 
 .about__img {
   margin-left: 5vw;
-  border-radius: 50%;
+
+  height: 200px;
+  width: 200px;
 }
 
-.about__img img {
+.profile__img {
   margin: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .about__majors {

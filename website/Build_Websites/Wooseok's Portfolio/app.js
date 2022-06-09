@@ -66,14 +66,27 @@ const HomeText = document.querySelector(".home__text");
 const NavbarLogo = document.querySelector(".navBar__logo");
 
 HomeIcon.addEventListener("mouseenter", () => {
-  console.log("it works");
-  HomeText.classList.add("rotate");
-  NavbarLogo.classList.add("MoveRotate");
+  HomeText.classList.add("rotateRight");
+  HomeIcon.classList.add("rotateRight");
+  NavbarLogo.classList.add("MoveRotateRight");
 });
 
 HomeIcon.addEventListener("mouseleave", () => {
-  HomeText.classList.remove("rotate");
-  NavbarLogo.classList.remove("MoveRotate");
+  HomeText.classList.remove("rotateRight");
+  HomeIcon.classList.remove("rotateRight");
+  NavbarLogo.classList.remove("MoveRotateRight");
+});
+
+HomeText.addEventListener("mouseenter", () => {
+  HomeText.classList.add("rotateLeft");
+  HomeIcon.classList.add("rotateLeft");
+  NavbarLogo.classList.add("MoveRotateLeft");
+});
+
+HomeText.addEventListener("mouseleave", () => {
+  HomeText.classList.remove("rotateLeft");
+  HomeIcon.classList.remove("rotateLeft");
+  NavbarLogo.classList.remove("MoveRotateLeft");
 });
 
 // Handling button move to contact section!
@@ -93,7 +106,7 @@ ContactMeBtn.addEventListener("click", () => {
 // ex) 사용자에게 보여지는 화면에서만 dom요소를 등록하여 최적화
 
 // ->나중에 한 번 작업하자..
-document.addEventListener("scroll", () => {
+/*document.addEventListener("scroll", () => {
   let height = 0;
   for (const page of section) {
     height += page.clientHeight;
@@ -107,7 +120,7 @@ document.addEventListener("scroll", () => {
       page.style.opacity = 1 - window.scrollY / page.realHeight;
     }
   });
-});
+});*/
 
 // show "Arrow up" button when scrolling down
 
