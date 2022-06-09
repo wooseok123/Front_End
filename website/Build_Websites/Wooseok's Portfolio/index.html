@@ -1,421 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Wooseok's Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" type = "image/png" href="imgs/logo.png">
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- NavBar -->
-        <nav id="navBar">
-            <div class="navBar__logo">
-                <img src="imgs/logo.png" alt="logo" width="40px" height="40px">   
-                <a href="#">Wooseok</a>     
-            </div>
-                <ul class="navBar__menu">
-                    <li class="navBar__menu__item" data-link="#home">Home</li>
-                    <li class="navBar__menu__item" data-link="#about">About</li>
-                    <li class="navBar__menu__item" data-link="#skills">Skills</li>
-                    <li class="navBar__menu__item" data-link="#work">My Work</li>
-                    <li class="navBar__menu__item" data-link="#testimonials">Testimonial</li>
-                    <li class="navBar__menu__item" data-link="#contact">Contact</li>
-                </ul>
-            <!-- Toggle Butoon -->
-            <button class="navbar__toggle-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wooseok's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="imgs/logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav id="navBar">
+      <div class="navBar__logo">
+        <!-- <img src="imgs/logo.png" alt="logo" width="40px" height="40px" /> -->
+        <a class="logo__name" href="#">Wooseok</a>
+      </div>
+      <ul class="navBar__menu">
+        <li class="navBar__menu__item" data-link="#home">Home</li>
+        <li class="navBar__menu__item" data-link="#about">About</li>
+        <li class="navBar__menu__item" data-link="#skills">Skills</li>
+        <li class="navBar__menu__item" data-link="#work">My Work</li>
+        <!-- <li class="navBar__menu__item" data-link="#testimonials">
+          Testimonial
+        </li> -->
+        <li class="navBar__menu__item" data-link="#contact">Contact</li>
+      </ul>
+      <!-- Toggle Butoon -->
+      <button class="navbar__toggle-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
 
-        <!-- Home -->
-        <section id="home" data-filter="home">
-            <div class="home__container">
-                <img 
-                src="imgs/profile.png" 
-                alt="Wooseok's profile" 
-                class="home__avatar"
-                />
-                <h1 class="home__title">Hello, <br />I'm Wooseok</h1>
-                <h2 class="home__description">
-                    A multi-potentialite creating
-                    whatever i want.</h2>
-                    <button class="home__contact">Contact Me!</button>
-            </div>
-            <!-- section 자체가 아니라 container를 넣어 -->
-            <!-- 배경색은 opacity에 영향을 받지 않음 -->
-        </section>
-        
-
-        <!-- About -->
-        <section 
-            id="about" 
-            class="section section__container"
-            data-filter="about">
-
-                <h1>About Me</h1>
-                <p><strong>'꿈꾸는 것을 현실로 구현하자'</strong>는 가치를 가진 다능인 한우석입니다.
-                    <br>현재 서강대학교 유럽문화학부 프랑스문화학과에 재학중이며 
-                        IT 회사 올유저닷넷에서 6개월간 서비스 기획인턴을 했습니다.
-                    <br>프론트엔드에서 1년 정도 개발을 해왔으며, HTML,CSS,JS를 통한 웹사이트 제작과
-                        Python을 통한 Web Scrapper 등의 프로젝트를 진행했습니다.
-                    <br>이상을 현실로 구현하는데 필요한 모든 것을 배우고자 노력합니다.
-                </p>
-                <div class="about__majors">
-                    <div class="major">
-                        <div class="major__icon">
-                            <i class="fab fa-html5"></i>
-                        </div>
-                        <h2 class="major__title">HTML</h2>
-                        <div class="major__description">
-                            HTML, CSS, JAVASCRIPT, Vue
-                        </div>
-                    </div>
-                    <div class="major">
-                        <div class="major__icon">
-                            <i class="fab fa-css3-alt"></i>
-                        </div>
-                        <h2 class="major__title">CSS</h2>
-                        <div class="major__description">
-                            HTML, CSS, JAVASCRIPT, Vue
-                        </div>
-                    </div>
-                    <div class="major">
-                        <div class="major__icon">
-                            <i class="fab fa-js-square"></i>
-                        </div>
-                        <h2 class="major__title">JAVASCRIPT</h2>
-                        <div class="major__description">
-                            HTML, CSS, JAVASCRIPT, Vue
-                        </div>
-                    </div>
-                </div>
-                <div class="about__jobs">
-                    <div class="job">
-                        <div class="job__logo">
-                            <a href="https://eu.sogang.ac.kr/eu/index.html" target="blank">
-                                <img 
-                                    src="imgs//jobs/Sogang_Logo.png" 
-                                    alt="SogangUniv" 
-                                    class="job__logo1"
-                                />
-                            </a>
-                        </div>
-                        <div class="job__description">
-                             <p class="job__name">
-                                 Currently majoring in French Culture from Sogang Univ.
-                             </p>
-                            <p class="job__period">
-                                2019 Mars ~
-                            </p> 
-                        </div>
-                    </div>
-                    <div class="job">
-                        <div class="job__logo">
-                            <a href="https://www.alluser.net/" target="blank">
-                                <img 
-                                    src="imgs//jobs/Allusernet.png" 
-                                    alt="Allusernet" 
-                                    class="job__logo2"
-                                />
-                            </a>
-                        </div>
-                        <div class="job__description">
-                            <p class="job__name">
-                                Previously Worked at Alluser.net as IT Service Planner
-                            </p>
-                           <p class="job__period">
-                               2019 August ~ 2020 February
-                           </p> 
-                       </div>
-                    </div>
-                </div>
-        </section>
-
-
-        <!-- Skills -->
-        <section 
-            id="skills" 
-            class="section"
-            data-filter="skills">
-
-            <div class="section__container">
-                <h1>Skills</h1>
-                <h2>Skills & Attributes</h2>
-                <p>
-                    새로운 것을 배우는 것을 즐기며, 다양한 것을 융합하여 문제를 해결하는 것을 좋아합니다.
-                    다양한 리더 업무를 맡으며 프로젝트 진행과 더불어 팀 환경에서 업무를 원활히 수행할 수 있습니다.
-                    맡은 바에 대해서는 책임감이 있으며, 세상을 더 효율적으로 시선에서 바라보려고 노력합니다. 
-                </p>
-                <div class="skillset">
-                    <div class="skillset__left">
-                        <h3 class="skillset__title">Skills</h3>
-                        <div class="skill">
-                            <div class="skill__description">
-                                <span>HTML</span>
-                                <span>99%</span>
-                                <!-- html의 progress를 이용할 수도 있으나, 스타일링이 힘들다 -->
-                            </div>
-                            <div class="skill__bar">
-                                <div class="skill__value" style="width: 99%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill__description">
-                                <span>CSS</span>
-                                <span>99%</span>
-                            </div>
-                            <div class="skill__bar">
-                                <div class="skill__value" style="width: 99%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill__description">
-                                <span>JAVASCRIPT</span>
-                                <span>99%</span>
-                            </div>
-                            <div class="skill__bar">
-                                <div class="skill__value" style="width: 99%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill__description">
-                                <span>Pyhton</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill__bar">
-                                <div class="skill__value" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skillset__right">
-                        <div class="tools">
-                            <h3 class="skillset__title">Tools</h3>
-                                <ul class="tools_list">
-                                    <li><span>Visual Studio Code</span></li>
-                                    <li><span>Figma</span></li>
-                                    <li><span>Pycharm</span></li>
-                                    <li><span>Word</span></li>
-                                    <li><span>Excel</span></li>
-                                </ul>
-                        </div>
-                        <div class="etc">
-                            <ul class="etc__list">
-                                <h3 class="skillset__title">Etc</h3>
-                                <li><span>Git</span></li>
-                                <li><span>French</span></li>
-                                <li><span>Project Management</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Work -->
-        <section 
-            id="work" 
-            class="section"
-            data-filter="work">
-
-            <div class="section__container">
-                <h1>My Work</h1>
-                <h3>Projects</h3>
-                <div class="work__categories">
-                    <button class="category__btn selected" data-filter ="*">
-                        All<span class="category__count">6</span>
-                    </button>
-                    <button class="category__btn" data-filter ="front-end">
-                        Front-end<span class="category__count">5</span>
-                    </button>
-                    <button class="category__btn" data-filter ="mobile">
-                        Mobile<span class="category__count">1</span>
-                    </button>
-                    <!-- alt+shift 상태로 커서를 내리면 다 잡을 수 있음 -->
-                </div>
-                <div class="work__projects">
-                    <a 
-                        href="https://github.com/wooseok123/Front-end/tree/main/Build_Websites/Wooseok's%20Portfolio"
-                        class="project"
-                        target="blank"
-                        data-type="front-end"
-                    >
-                        <img 
-                            src="imgs/projects/project1.png" 
-                            alt="youtube" 
-                            class="project__img"
-                        />
-                        <div class="project__description">
-                            <h3>Youtube Site</h3>
-                            <span>Clone coding with HTML and CSS</span>
-                        </div>
-                    </a>
-                    <a 
-                        href="https://github.com/wooseok123/Front-end/tree/main/Build_Websites/Wooseok's%20Portfolio"
-                        class="project"
-                        target="blank"
-                        data-type="front-end"
-                    >
-                        <img 
-                            src="imgs/projects/project1.png" 
-                            alt="youtube" 
-                            class="project__img"
-                        />  
-                        <div class="project__description">
-                            <h3>Wooseok's Portfolio</h3>
-                            <span>Clone coding with HTML and CSS</span>
-                        </div>
-                    </a>
-                     <a 
-                        href="https://github.com/wooseok123/Front-end/tree/main/Build_Websites/10000hour-main"
-                        class="project"
-                        target="blank"
-                        data-type="front-end"
-                    >
-                        <img 
-                            src="imgs/projects/project2.png" 
-                            alt="10000HOURS" 
-                            class="project__img">  
-                        <div class="project__description">
-                            <h3>10000HOURS</h3>
-                            <span>Clone coding with HTML, CSS and JS</span>
-                        </div>
-                    </a>
-                    <a 
-                        href="https://github.com/wooseok123/Front-end/tree/main/Build_Websites/Wooseok's%20Portfolio"
-                        class="project"
-                        target="blank"
-                        data-type="front-end"
-                    >
-                        <img 
-                            src="imgs/projects/project3.png" 
-                            alt="productivity" 
-                            class="project__img">  
-                        <div class="project__description">
-                            <h3>productivity_1</h3>
-                            <span>Clone coding with HTML, CSS and JS</span>
-                        </div>
-                    </a>
-                    <a
-                        href="https://github.com/wooseok123/Front-end/tree/main/Build_Websites/%EC%83%9D%EC%82%B0%EC%84%B1%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80/practice"
-                        class="project"
-                        target="blank"
-                        data-type="front-end"
-                    >
-                        <img 
-                            src="imgs/projects/project4.png" 
-                            alt="youtube" 
-                            class="project__img">  
-                        <div class="project__description">
-                            <h3>productivity_2</h3>
-                            <span>Clone coding with HTML, CSS and JS</span>
-                        </div>
-                    </a>
-                    <a 
-                        href="https://github.com/wooseok123/Front-end/tree/main/Build_Websites/%EC%BA%94%EB%B2%84%EC%8A%A4%EA%B7%B8%EB%A6%AC%EA%B8%B0_%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80"
-                        class="project"
-                        target="blank"
-                        data-type="mobile"
-                    >
-                        <img 
-                            src="imgs/projects/project5.png" 
-                            alt="canvas"
-                            class="project__img"
-                        /> 
-                        <div class="project__description">
-                            <h3>Canvas</h3>
-                            <span>Clone coding with HTML and CSS</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- 넣는 이미지의 파일도 많고 크기도 제각각일 수록 -->
-            <!-- 사용자 입장에서 부담스러우므로 png resize 사이트를 이용  -->
-            <!-- png compressor -> 이미지 파일의 크기를 작게 해줌(최대한 화질을 비슷하게 하면서) -->
-            <!-- 배포 전에 사용되는 이미지의 크기를 줄이자 -->
-
-            
-        </section>
-
-        <!-- Testimonials -->
-        <section 
-            id="testimonials" 
-            class="section"
-            data-filter="testimonial">
-            <div class="section__container">
-                <h1>Testimonials</h1>
-                <h3>See what they say about me</h3>
-                    <div class="testimonial">
-                        <img 
-                        src="imgs/testimonial/people.jpg" 
-                        alt="People" 
-                        class="testimonial__avatar">
-                        <div class="testimonial__speech-bubble">
-                            <!-- camel case를 쓰거나 -를 쓰거나 -->
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Soluta officia, hic rerum, debitis molestias autem ullam repellat, 
-                                placeat nobis modi ipsum ut dolore nam explicabo adipisci incidunt quis. 
-                                Nulla, adipisci!
-                            </p>
-                            <p class="name"><a href="">Ellie </a>/ Samsung</p>
-                        </div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial__speech-bubble">
-                            <!-- camel case를 쓰거나 -를 쓰거나 -->
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Soluta officia, hic rerum, debitis molestias autem ullam repellat, 
-                                placeat nobis modi ipsum ut dolore nam explicabo adipisci incidunt quis. 
-                                Nulla, adipisci!
-                            </p>
-                            <p class="name"><a href="">Ellie </a>/ Samsung</p>
-                        </div>
-                        <img 
-                        src="imgs/testimonial/people.jpg" 
-                        alt="People" 
-                        class="testimonial__avatar">
-                    </div>
-            </div>
-        </section>
-
-
-        <!-- Contact -->
-        <section 
-            id="contact" 
-            class="section"
-            data-filter="contact">
-            <h1 class="contact__title">Lets' talk</h1>
-            <h2 class="contact__email">hosmimam@naver.com</h2>
-            <div class="contact__links">
-                <a href="https://github.com/wooseok123" target="blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" target="blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-            <p class="contact__rights">
-                2021 multi-potentialite - All rights reserved
-            </p>
-        </section>
-
-        <div class="arrow-Up">
-            <i class="fas fa-arrow-up"></i>
+    <!-- Home -->
+    <section id="home" data-filter="home">
+      <div class="home__container">
+        <div class="home__text">
+          <h1 class="home__title">Hello, <br />I'm Wooseok</h1>
+          <h2 class="home__description">
+            A multi-potentialite creating<br />
+            whatever i want.
+          </h2>
         </div>
+        <div class="home__icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+      </div>
+      <div class="home__button">
+        <button class="home__contact">Contact Me!</button>
+      </div>
+      <!-- section 자체가 아니라 container를 넣어 -->
+      <!-- 배경색은 opacity에 영향을 받지 않음 -->
+    </section>
 
+    <!-- About -->
+    <section id="about" class="section section__container" data-filter="about">
+      <div class="about__container">
+        <div class="about__description">
+          <h1>About Me</h1>
+          <p>
+            This is <strong>Woo-seok HAN</strong>, a multipoteintialite who
+            believes in the idea of 'Let's make dreams come true.' I'm now
+            enrolled in Sogang University's Department of French Culture
+            of European Cultures and Languages and completed a six-month service
+            planning internship at AllUser.net, an IT company.I've been working
+            on projects like website development using HTML, CSS,  Js , and
+            React.js and also a web scraper using Python. I work hard to learn
+            everything I need to know in order to make my dream a reality.
+          </p>
+        </div>
+        <div class="about__img">
+          <img src="imgs/about__profile.png" alt="logo" class="profile__img" />
+        </div>
+      </div>
+      <div class="about__majors">
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <h2 class="major__title">HTML</h2>
+          <div class="major__description"></div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <h2 class="major__title">CSS</h2>
+          <div class="major__description"></div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-js-square"></i>
+          </div>
+          <h2 class="major__title">JAVASCRIPT</h2>
+          <div class="major__description"></div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-react"></i>
+          </div>
+          <h2 class="major__title">React</h2>
+          <div class="major__description"></div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-python"></i>
+          </div>
+          <h2 class="major__title">Python</h2>
+          <div class="major__description"></div>
+        </div>
+      </div>
+      <div class="about__jobs">
+        <div class="job">
+          <div class="job__logo">
+            <a href="https://eu.sogang.ac.kr/eu/index.html" target="blank">
+              <img
+                src="imgs//jobs/Sogang_Logo.png"
+                alt="SogangUniv"
+                class="job__logo1"
+              />
+            </a>
+          </div>
+          <div class="job__description">
+            <p class="job__name">
+              Currently majoring in French Culture from Sogang Univ.
+            </p>
+            <p class="job__period">2019 Mars ~</p>
+          </div>
+        </div>
+        <div class="job">
+          <div class="job__logo">
+            <a href="https://www.alluser.net/" target="blank">
+              <img
+                src="imgs//jobs/Allusernet.png"
+                alt="Allusernet"
+                class="job__logo2"
+              />
+            </a>
+          </div>
+          <div class="job__description">
+            <p class="job__name">
+              Previously Worked at Alluser.net as IT Service Planner
+            </p>
+            <p class="job__period">2019 August ~ 2020 February</p>
+          </div>
+        </div>
+        <div class="job">
+          <div class="job__logo">
+            <a href="https://www.zulamakorea.com/" target="blank">
+              <img
+                src="imgs//jobs/zulama.png"
+                alt="zulama"
+                class="job__logo2"
+              />
+            </a>
+          </div>
+          <div class="job__description">
+            <p class="job__name">
+              Currently Working at Zulamakorea as Coding tutor
+            </p>
+            <p class="job__period">2019 August ~ 2020 February</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Skills -->
+    <section id="skills" class="section" data-filter="skills">
+      <div class="section__container">
+        <h1>Skills</h1>
+        <h2>Skills & Attributes</h2>
+        <p>
+          I Enjoys learning new things and solving issues by combining different
+          ideas. I love to being in charge of various leadership roles as the
+          project progresses and the team grows. I can work efficiently in good
+          teamwork. ake responsibility for  my things. And i strive to see the
+          world more efficiently through my eyes.
+        </p>
+        <div class="skillset">
+          <div class="skillset__left">
+            <h3 class="skillset__title">Skills</h3>
+            <div class="skill">
+              <div class="skill__description">
+                <span>HTML</span>
+                <span>99%</span>
+                <!-- html의 progress를 이용할 수도 있으나, 스타일링이 힘들다 -->
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 99%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>CSS</span>
+                <span>90%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>JAVASCRIPT</span>
+                <span>85%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>React</span>
+                <span>80%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>Pyhton</span>
+                <span>89%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 89%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skillset__right">
+            <div class="tools">
+              <h3 class="skillset__title">Tools</h3>
+              <ul class="tools_list">
+                <li><span>Visual Studio Code</span></li>
+                <li><span>Figma</span></li>
+                <li><span>Pycharm</span></li>
+                <li><span>Word</span></li>
+                <li><span>Excel</span></li>
+              </ul>
+            </div>
+            <div class="etc">
+              <ul class="etc__list">
+                <h3 class="skillset__title">Etc</h3>
+                <li><span>Git</span></li>
+                <li><span>French</span></li>
+                <li><span>Project Management</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <script src="app.js"></script>
-    </body>
+    <!-- Work -->
+    <section id="work" class="section" data-filter="work">
+      <div class="section__container">
+        <h1>My Work</h1>
+        <h3>Click to view details of projects!</h3>
+        <div class="work__categories">
+          <button class="category__btn selected" data-filter="*">
+            All<span class="category__count">12</span>
+          </button>
+          <button class="category__btn" data-filter="front-end">
+            front-end<span class="category__count">6</span>
+          </button>
+          <button class="category__btn" data-filter="individual">
+            individual<span class="category__count">6</span>
+          </button>
+          <!-- alt+shift 상태로 커서를 내리면 다 잡을 수 있음 -->
+        </div>
+        <div class="work__projects">
+          <a
+            href="https://short-adapter-86c.notion.site/ICC-Bokeh-7ca2884ecdb2414caab4a5e2622b357e"
+            class="project"
+            target="blank"
+            data-type="front-end"
+          >
+            <img
+              src="imgs/projects/project1.png"
+              alt="Bokeh"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Bokeh</h3>
+              <span>#1 Mini Hackathon of ICC</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/ICC-Neuron-4e0a10ad443e4d748a8630d84242ee18"
+            class="project"
+            target="blank"
+            data-type="front-end"
+          >
+            <img
+              src="imgs/projects/project2.png"
+              alt="Neuron"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Neuron</h3>
+              <span>#1 project of ICC</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/ICC-Reed-the-conductor-7baa477f9e1441909fb531ea8566c644"
+            class="project"
+            target="blank"
+            data-type="front-end"
+          >
+            <img
+              src="imgs/projects/project3.png"
+              alt="Reed"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Reed, the conductor</h3>
+              <span>#2 project of ICC</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/ICC-Falling-leaves-2304eb17d340491b95b2497df58f42d1"
+            class="project"
+            target="blank"
+            data-type="front-end"
+          >
+            <img
+              src="imgs/projects/project4.png"
+              alt="Falling leaves"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Falling leaves</h3>
+              <span>#3 project of ICC</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/ICC-Music-Fountain-4da1fdc122534306a02c95bfdc1ffeda"
+            class="project"
+            target="blank"
+            data-type="front-end"
+          >
+            <img
+              src="imgs/projects/project5.png"
+              alt="Musical Fountain"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Musical Fountain</h3>
+              <span>#4 project of ICC</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/ICC-The-weather-changes-companies-7c7818b803354b52b5189c41e72f3451"
+            class="project"
+            target="blank"
+            data-type="front-end"
+          >
+            <img
+              src="imgs/projects/project6.png"
+              alt="google"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>weather changes companies</h3>
+              <span>#5 project of ICC</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/8b150f269ed34ea3a7e297cbfd5e6686"
+            class="project"
+            target="blank"
+            data-type="individual"
+          >
+            <img
+              src="imgs/projects/project7.png"
+              alt="tourniquet"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>pulling tourniquet</h3>
+              <span>Patent application</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/27ed89344ed7446a8f51c66d5389adbe"
+            class="project"
+            target="blank"
+            data-type="individual"
+          >
+            <img
+              src="imgs/projects/project8.png"
+              alt="plastic"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Non-label plastic</h3>
+              <span>민생규제혁신 공모전 우수제안</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/e9b75672602845958674700a6d9d4ee7"
+            class="project"
+            target="blank"
+            data-type="individual"
+          >
+            <img
+              src="imgs/projects/project9.png"
+              alt="delivery"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Delivery service for foreigners</h3>
+              <span>서강대학교 창업경진대회 우수상</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/AI-bde0fdc560a34649aeb0205b90173d31"
+            class="project"
+            target="blank"
+            data-type="individual"
+          >
+            <img
+              src="imgs/projects/project10.png"
+              alt="intern"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Alluser.net Business Planner & Development</h3>
+              <span>올유저닷넷 기획 인턴</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/da7d135dd79a46af8bdfcf782d5e698c"
+            class="project"
+            target="blank"
+            data-type="individual"
+          >
+            <img
+              src="imgs/projects/project11.png"
+              alt="contest_army"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>K-ARMY IDEA BOOM BOOM CONTEST</h3>
+              <span>장병 길라잡이 앱 "MIM"</span>
+            </div>
+          </a>
+          <a
+            href="https://short-adapter-86c.notion.site/e78727599f1e41628d13ed19f70ad069"
+            class="project"
+            target="blank"
+            data-type="individual"
+          >
+            <img
+              src="imgs/projects/project12.png"
+              alt="SG giftshop"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Sonang Giftshop marketing</h3>
+              <span>서강대학교 기념품샵 리뉴얼(마케팅, 기획)</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- 넣는 이미지의 파일도 많고 크기도 제각각일 수록 -->
+      <!-- 사용자 입장에서 부담스러우므로 png resize 사이트를 이용  -->
+      <!-- png compressor -> 이미지 파일의 크기를 작게 해줌(최대한 화질을 비슷하게 하면서) -->
+      <!-- 배포 전에 사용되는 이미지의 크기를 줄이자 -->
+    </section>
+
+    <!-- Testimonials -->
+    <!-- <section id="testimonials" class="section" data-filter="testimonial">
+      <div class="section__container">
+        <h1>Testimonials</h1>
+        <h3>See what they say about me</h3>
+        <div class="testimonial">
+          <img
+            src="imgs/testimonial/people.jpg"
+            alt="People"
+            class="testimonial__avatar"
+          />
+          <div class="testimonial__speech-bubble"> -->
+    <!-- camel case를 쓰거나 -를 쓰거나 -->
+    <!-- <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+              officia, hic rerum, debitis molestias autem ullam repellat,
+              placeat nobis modi ipsum ut dolore nam explicabo adipisci incidunt
+              quis. Nulla, adipisci!
+            </p>
+            <p class="name"><a href="">Ellie </a>/ Samsung</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__speech-bubble"> -->
+    <!-- camel case를 쓰거나 -를 쓰거나 -->
+    <!-- <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+              officia, hic rerum, debitis molestias autem ullam repellat,
+              placeat nobis modi ipsum ut dolore nam explicabo adipisci incidunt
+              quis. Nulla, adipisci!
+            </p>
+            <p class="name"><a href="">Ellie </a>/ Samsung</p>
+          </div>
+          <img
+            src="imgs/testimonial/people.jpg"
+            alt="People"
+            class="testimonial__avatar"
+          />
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Contact -->
+    <section id="contact" class="section" data-filter="contact">
+      <h1 class="contact__title">Lets' talk</h1>
+      <h2 class="contact__email">hosmimam@naver.com</h2>
+      <div class="contact__links">
+        <a href="https://github.com/wooseok123" target="blank">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p class="contact__rights">
+        2022 multi-potentialite - All rights reserved
+      </p>
+    </section>
+
+    <div class="arrow-Up">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
 </html>
 
 <!-- https://git-scm.com/doc -->
